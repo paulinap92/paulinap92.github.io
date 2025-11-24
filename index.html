@@ -11,69 +11,93 @@
     body {
         margin: 0;
         font-family: "Nunito", sans-serif;
-        background: #f1fafc;
-        color: #1b1b1b;
+        background: #e9f6ff; /* lighter blue */
+        color: #0f2d3b;
     }
 
     :root {
-        --turquoise: #4cc7c2;
-        --turquoise-dark: #239a94;
-        --turquoise-light: #c6f5f3;
-        --blue-dark: #1d5b75;
+        --blue1: #46b5e8;
+        --blue2: #2c88b8;
+        --blue3: #0f3f55;
+        --aqua: #5ad6c8;
         --white: #ffffff;
     }
 
+    /* HEADER */
     header {
-        background: linear-gradient(135deg, var(--turquoise-dark), var(--turquoise));
-        padding: 80px 20px;
-        text-align: center;
+        background: linear-gradient(135deg, var(--blue2), var(--blue1));
+        padding: 60px 20px;
         color: white;
+        text-align: center;
+        position: relative;
     }
 
     header h1 {
         font-size: 3rem;
-        margin: 0 0 10px 0;
-        font-weight: 800;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+
+    /* LANGUAGE SWITCH */
+    .lang-switch {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .lang-switch button {
+        background: rgba(255,255,255,0.9);
+        border: none;
+        padding: 8px 14px;
+        margin-left: 6px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        color: var(--blue3);
+    }
+    .lang-switch button:hover {
+        background: var(--aqua);
+        color: #003435;
     }
 
     h2 {
         text-align: center;
-        font-size: 2.2rem;
+        font-size: 2.3rem;
         font-weight: 800;
-        color: var(--turquoise-dark);
+        color: var(--blue3);
         margin-top: 60px;
     }
 
+    /* FEATURED PROJECT */
     .featured-container {
         max-width: 1050px;
-        margin: 40px auto 20px auto;
+        margin: 30px auto 20px auto;
         padding: 20px;
     }
 
     .featured-card {
         background: white;
         border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        border: 4px solid var(--turquoise-light);
-        padding-bottom: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        border: 4px solid #bfefff;
+        padding-bottom: 25px;
     }
 
     .featured-card h3 {
         padding: 20px;
         margin: 0;
-        font-size: 1.9rem;
-        font-weight: 800;
-        color: var(--blue-dark);
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--blue3);
     }
 
     .featured-card p {
         padding: 0 20px;
         line-height: 1.6;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .btn {
-        background: var(--turquoise-dark);
+        background: var(--blue2);
         color: white;
         padding: 12px 20px;
         border-radius: 12px;
@@ -85,16 +109,17 @@
     }
 
     .btn:hover {
-        background: var(--turquoise);
+        background: var(--blue1);
     }
 
+    /* BANNER */
     .banner-wrap {
         width: 100%;
         max-width: 1150px;
         margin: 20px auto 40px auto;
-        border-radius: 18px;
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .banner-img {
@@ -102,7 +127,14 @@
         height: 600px;
         object-fit: cover;
         display: block;
-        border-radius: 18px;
+        border-radius: 20px;
+    }
+
+    /* OTHER PROJECTS */
+    h2.subsection {
+        margin-top: 80px;
+        font-size: 2rem;
+        color: var(--blue2);
     }
 
     .projects {
@@ -118,7 +150,7 @@
         background: white;
         border-radius: 18px;
         overflow: hidden;
-        border: 4px solid var(--turquoise-light);
+        border: 4px solid #bfefff;
         box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
@@ -136,33 +168,72 @@
         margin-top: 0;
         font-size: 1.4rem;
         font-weight: 800;
-        color: var(--blue-dark);
+        color: var(--blue3);
     }
 
+    /* ABOUT */
     .about {
         max-width: 850px;
         margin: 40px auto;
         padding: 0 20px;
+        font-size: 1.17rem;
         line-height: 1.8;
-        font-size: 1.15rem;
     }
 
+    /* CONTACT */
     .contact {
         text-align: center;
-        margin: 60px 0;
+        margin: 40px 0 70px 0;
         font-size: 1.3rem;
         font-weight: 700;
-        color: var(--turquoise-dark);
     }
 
     .contact a {
         margin: 0 15px;
-        color: var(--blue-dark);
+        color: var(--blue2);
         text-decoration: none;
-        font-weight: 700;
     }
 
 </style>
+
+<script>
+/* MULTILANGUAGE SYSTEM */
+const t = {
+    en: {
+        projects: "Featured Flagship Project",
+        other: "Other important projects",
+        about_title: "About Me",
+        contact: "Contact",
+        about:
+          "Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain. I build complete ML solutions: pipelines, dashboards, forecasting models, and microservices.",
+    },
+    es: {
+        projects: "Proyecto principal destacado",
+        other: "Otros proyectos importantes",
+        about_title: "Sobre mí",
+        contact: "Contacto",
+        about:
+          "Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España. Construyo soluciones completas de ML: pipelines, dashboards, modelos de predicción y microservicios.",
+    },
+    pl: {
+        projects: "Najważniejszy projekt",
+        other: "Inne ważne projekty",
+        about_title: "O mnie",
+        contact: "Kontakt",
+        about:
+          "Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii. Tworzę kompletne rozwiązania ML: pipeline’y, dashboardy, modele prognostyczne i mikroserwisy.",
+    }
+};
+
+function setLang(lang) {
+    document.getElementById("projects-title").textContent = t[lang].projects;
+    document.getElementById("other-title").textContent = t[lang].other;
+    document.getElementById("about-title").textContent = t[lang].about_title;
+    document.getElementById("about-text").textContent = t[lang].about;
+    document.getElementById("contact-title").textContent = t[lang].contact;
+}
+</script>
+
 </head>
 
 
@@ -170,28 +241,39 @@
 
 <header>
     <h1>Paulina – Data Scientist & AI Developer</h1>
+
+    <div class="lang-switch">
+        <button onclick="setLang('en')">🇬🇧 EN</button>
+        <button onclick="setLang('es')">🇪🇸 ES</button>
+        <button onclick="setLang('pl')">🇵🇱 PL</button>
+    </div>
 </header>
 
-<h2>My Projects</h2>
+<h2 id="projects-title">Najważniejszy projekt</h2>
 
 <div class="featured-container">
     <div class="featured-card">
-        <h3>🌴 ✈️ Canary Islands Air Passenger Forecasting</h3>
+        <h3>🇮🇨 🌴 Canary Islands Air Passenger Forecasting</h3>
+
         <p>
-            Flagship dashboard with XGBoost, LSTM, YOY comparison, KPIs, heatmaps,
-            and interactive island selection. Forecast to 2026.
+            Flagowy dashboard turystyczny z: XGBoost, LSTM, KPIs, YOY, heatmapami,
+            analizą sezonowości i wyborem wyspy. Prognozy do 2026 r.
         </p>
+
         <a class="btn" href="https://pasajeros-canarias.streamlit.app" target="_blank">Open Dashboard</a>
-        <a class="btn" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting"
-           style="background: var(--turquoise); color:#003c3c;"
-           target="_blank">GitHub</a>
+        <a class="btn" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank">GitHub</a>
     </div>
 </div>
 
-<!-- BANNER under the Canary Dashboard -->
+<!-- BANNER -->
 <div class="banner-wrap">
-    <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/refs/heads/main/full_banner_combined.png" class="banner-img">
+    <img 
+        src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/refs/heads/main/full_banner_combined.png"
+        class="banner-img"
+    >
 </div>
+
+<h2 id="other-title" class="subsection">Inne ważne projekty</h2>
 
 <section class="projects">
 
@@ -199,7 +281,7 @@
         <img src="https://dummyimage.com/600x300/239a94/ffffff&text=Transaction+Data+Report">
         <div class="card-content">
             <h3>📊 Transaction Data Report</h3>
-            <p>CSV ingestion pipeline, anomaly detection, daily PDF reports, email sender.</p>
+            <p>CSV ingestion, anomaly detection, PDF generator, emailing pipeline.</p>
             <a class="btn" href="https://github.com/paulinap92/transaction_data_report" target="_blank">GitHub</a>
         </div>
     </div>
@@ -208,7 +290,7 @@
         <img src="https://dummyimage.com/600x300/4cc7c2/ffffff&text=Travel+Agency+SQL">
         <div class="card-content">
             <h3>🌍 Travel Agency — SQL Challenge</h3>
-            <p>Advanced SQL case with analytics, KPIs, booking logic & ranking.</p>
+            <p>Advanced SQL analytics involving KPIs, bookings, customers and agencies.</p>
             <a class="btn" href="https://github.com/paulinap92/travel_agency_sql_challenge" target="_blank">GitHub</a>
         </div>
     </div>
@@ -224,17 +306,26 @@
 
 </section>
 
-<h2>About Me</h2>
-<div class="about">
-    Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain.  
-    I create full end-to-end machine learning solutions: pipelines, dashboards, models and microservices.
+
+<h2 id="about-title">O mnie</h2>
+
+<div class="about" id="about-text">
+    Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.
+    Tworzę kompletne rozwiązania ML: pipeline’y, dashboardy, modele prognostyczne i mikroserwisy.
 </div>
 
-<h2>Contact</h2>
+<h2 id="contact-title">Kontakt</h2>
+
 <div class="contact">
-    <a href="mailto:your@email">📧 Email</a>
-    <a href="https://github.com/paulinap92" target="_blank">💻 GitHub</a>
-    <a href="https://linkedin.com" target="_blank">🌐 LinkedIn</a>
+    <a href="mailto:your@email">
+        📧 Email
+    </a>
+    <a href="https://github.com/paulinap92" target="_blank">
+        💻 GitHub
+    </a>
+    <a href="https://linkedin.com" target="_blank">
+        🌐 LinkedIn
+    </a>
 </div>
 
 </body>
