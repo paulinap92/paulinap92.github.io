@@ -5,53 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Paulina – Data Scientist & AI Developer</title>
 
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
     body {
         margin: 0;
-        font-family: "Inter", Arial, sans-serif;
-        background: #f4f7fa;
-        color: #1d1d1d;
-        transition: background 0.3s ease;
+        font-family: "Poppins", Arial, sans-serif;
+        background: #faf5ef; /* soft beige */
+        color: #1a1a1a;
     }
 
-    /* -------- COLORS -------- */
+    /* ------- BLUE–BEIGE COLOR SCHEME ------- */
     :root {
-        --primary: #3e5ea8;      /* stonowany granat */
-        --secondary: #7c6ae6;    /* cichy fiolet */
-        --accent: #20b2aa;       /* pastelowy turkus */
-        --bg-card: #ffffff;
-        --footer: #2d2d2d;
+        --blue-dark: #014f86;
+        --blue: #2a6f97;
+        --blue-light: #61a5c2;
+        --sand: #f7ede2;
+        --accent: #38b6ab;
+        --white: #ffffff;
+        --shadow: rgba(0,0,0,0.08);
     }
 
-    /* -------- HEADER -------- */
+    /* ------- HEADER ------- */
     header {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        padding: 70px 20px;
+        background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+        padding: 80px 20px;
         text-align: center;
         color: white;
-        animation: fadeIn 1s ease-out;
+        border-bottom: 6px solid var(--sand);
     }
     header h1 {
         font-size: 3rem;
+        font-weight: 700;
         margin-bottom: 10px;
     }
     header p {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         opacity: 0.95;
     }
 
-    /* -------- LANGUAGE SWITCH -------- */
-    .lang-switch {
-        margin-top: 20px;
-    }
+    /* ------- LANGUAGE SWITCH ------- */
     .lang-switch button {
-        background: white;
-        color: var(--primary);
+        background: var(--sand);
         border: none;
-        margin: 0 5px;
         padding: 8px 14px;
+        margin: 10px 5px 0 5px;
+        border-radius: 8px;
         font-weight: 600;
-        border-radius: 6px;
         cursor: pointer;
         transition: 0.3s;
     }
@@ -60,150 +61,167 @@
         color: white;
     }
 
-    /* -------- TITLES -------- */
+    /* ------- TITLES ------- */
     h2 {
         text-align: center;
         margin-top: 60px;
         font-size: 2.2rem;
-        color: var(--primary);
-        animation: fadeInUp 0.7s ease-out;
+        color: var(--blue-dark);
+        font-weight: 700;
     }
 
-    /* -------- PROJECT CARDS -------- */
+    /* ------- PROJECTS GRID ------- */
     .projects {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-        gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 28px;
         padding: 40px;
     }
 
-    .card {
-        background: var(--bg-card);
-        border-radius: 16px;
+    /* ------- SPECIAL FEATURED CARD ------- */
+    .featured-card {
+        background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+        color: white;
+        border-radius: 20px;
+        padding-bottom: 20px;
         overflow: hidden;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        border-left: 6px solid var(--accent);
-        transition: transform 0.3s ease;
-        animation: fadeInUp 0.8s ease-out;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        border: 5px solid var(--sand);
+        animation: fadeInUp 0.9s ease-out;
+    }
+    .featured-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        opacity: 0.9;
+    }
+    .featured-card h3 {
+        padding: 20px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .featured-card p {
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+    .featured-card .btn {
+        margin-left: 20px;
+        background: var(--sand);
+        color: var(--blue-dark);
+        font-weight: 700;
     }
 
+    /* ------- NORMAL CARDS ------- */
+    .card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px var(--shadow);
+        transition: transform 0.3s ease;
+        border: 4px solid var(--sand);
+        animation: fadeInUp 1s ease-out;
+    }
     .card:hover {
         transform: translateY(-6px);
     }
-
     .card img {
         width: 100%;
         height: 180px;
         object-fit: cover;
     }
-
     .card-content {
-        padding: 20px;
+        padding: 22px;
     }
-
     .card h3 {
         margin-top: 0;
-        color: var(--secondary);
+        color: var(--blue);
         font-size: 1.4rem;
-    }
-
-    .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 18px;
-        background: var(--primary);
-        color: white;
-        border-radius: 10px;
-        text-decoration: none;
-        transition: 0.3s;
         font-weight: 600;
     }
 
+    /* ------- BUTTONS ------- */
+    .btn {
+        display: inline-block;
+        margin-top: 14px;
+        padding: 10px 18px;
+        background: var(--blue);
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
     .btn:hover {
-        background: var(--secondary);
+        background: var(--blue-light);
     }
 
-    /* -------- ABOUT -------- */
+    /* ------- ABOUT ------- */
     .about {
         max-width: 850px;
         margin: 40px auto;
         padding: 0 20px;
         font-size: 1.15rem;
         line-height: 1.8;
-        animation: fadeIn 1s ease-out;
     }
 
-    /* -------- CONTACT -------- */
+    /* ------- CONTACT ------- */
     .contact {
         text-align: center;
         margin: 50px 0;
-        animation: fadeInUp 1s ease-out;
+        font-size: 1.3rem;
+        font-weight: 600;
     }
-
     .contact a {
         margin: 0 15px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--primary);
+        color: var(--blue-dark);
         text-decoration: none;
-        transition: 0.3s;
     }
     .contact a:hover {
-        color: var(--secondary);
+        color: var(--accent);
     }
 
-    /* -------- FOOTER -------- */
-    footer {
-        background: var(--footer);
-        color: #ccc;
-        text-align: center;
-        padding: 20px;
-        margin-top: 60px;
-    }
-
-    /* -------- ANIMATIONS -------- */
-    @keyframes fadeIn {
-        from {opacity: 0;} to {opacity: 1;}
-    }
+    /* ------- ANIMATIONS ------- */
     @keyframes fadeInUp {
         from {opacity: 0; transform: translateY(20px);}
         to {opacity: 1; transform: translateY(0);}
     }
+
 </style>
 
 <script>
-    // ---- MULTILANGUAGE SYSTEM ----
-    const translations = {
-        en: {
-            about: "Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain. I specialize in machine learning, forecasting, dashboards, data engineering and building small production-ready systems.",
-            about2: "I work with Python, Streamlit, Pandas, MongoDB, MySQL, XGBoost, neural networks and Docker. I build end-to-end pipelines, deploy dashboards and integrate ML models into apps.",
-            projects: "My Projects",
-            about_title: "About Me",
-            contact: "Contact Me"
-        },
-        es: {
-            about: "¡Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España. Me especializo en machine learning, forecasting, dashboards, ingeniería de datos y sistemas productivos.",
-            about2: "Trabajo con Python, Streamlit, Pandas, MongoDB, MySQL, XGBoost, redes neuronales y Docker. Creo pipelines completos, despliego dashboards e integro modelos de ML.",
-            projects: "Mis Proyectos",
-            about_title: "Sobre mí",
-            contact: "Contáctame"
-        },
-        pl: {
-            about: "Cześć! Jestem Paulina — Data Scientist i Python/AI Developer w Hiszpanii. Specjalizuję się w machine learningu, prognozowaniu, dashboardach, data engineering i systemach produkcyjnych.",
-            about2: "Pracuję z Pythonem, Streamlitem, Pandas, MongoDB, MySQL, XGBoost, sieciami neuronowymi i Dockerem. Buduję pipeline’y end-to-end i wdrażam modele ML.",
-            projects: "Moje Projekty",
-            about_title: "O mnie",
-            contact: "Kontakt"
-        }
-    };
-
-    function setLang(lang) {
-        document.getElementById("about1").textContent = translations[lang].about;
-        document.getElementById("about2").textContent = translations[lang].about2;
-        document.getElementById("projects-title").textContent = translations[lang].projects;
-        document.getElementById("about-title").textContent = translations[lang].about_title;
-        document.getElementById("contact-title").textContent = translations[lang].contact;
+/* ------- MULTILANGUAGE SYSTEM ------- */
+const translations = {
+    en: {
+        projects: "My Projects",
+        about_title: "About Me",
+        contact: "Contact Me",
+        about: "Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain. I specialize in forecasting, AI, dashboards, and machine learning.",
+        about2: "I work with Python, Streamlit, Pandas, MongoDB, MySQL, Docker, and both classical ML and neural networks. I build full end-to-end solutions."
+    },
+    es: {
+        projects: "Mis Proyectos",
+        about_title: "Sobre mí",
+        contact: "Contáctame",
+        about: "¡Hola! Soy Paulina — Data Scientist y desarrolladora de IA en España. Me especializo en forecasting, dashboards y machine learning.",
+        about2: "Trabajo con Python, Streamlit, Pandas, MongoDB, MySQL, Docker y modelos clásicos y neuronales. Construyo soluciones completas end-to-end."
+    },
+    pl: {
+        projects: "Moje Projekty",
+        about_title: "O mnie",
+        contact: "Kontakt",
+        about: "Cześć! Jestem Paulina — Data Scientist i AI Developer w Hiszpanii. Specjalizuję się w prognozowaniu, dashboardach i machine learningu.",
+        about2: "Pracuję z Pythonem, Streamlitem, Pandas, MongoDB, MySQL, Dockerem oraz klasycznymi i neuronowymi modelami ML. Tworzę kompletne rozwiązania end-to-end."
     }
+};
+
+function setLang(lang) {
+    document.getElementById("projects-title").textContent = translations[lang].projects;
+    document.getElementById("about-title").textContent = translations[lang].about_title;
+    document.getElementById("contact-title").textContent = translations[lang].contact;
+    document.getElementById("about1").textContent = translations[lang].about;
+    document.getElementById("about2").textContent = translations[lang].about2;
+}
 </script>
 
 </head>
@@ -211,7 +229,7 @@
 
 <header>
     <h1>Paulina – Data Scientist & AI Developer</h1>
-    <p>Machine Learning · Forecasting · Dashboards · Python · AI Systems</p>
+    <p>Forecasting · Machine Learning · AI Systems · Dashboards</p>
 
     <div class="lang-switch">
         <button onclick="setLang('en')">EN</button>
@@ -224,48 +242,45 @@
 
 <section class="projects">
 
-    <!-- Canary Forecast -->
-    <div class="card">
-        <img src="https://dummyimage.com/600x300/7c6ae6/ffffff&text=Canary+Islands+Forecast" alt="">
-        <div class="card-content">
-            <h3>✈️ Canary Islands Air Passenger Forecasting</h3>
-            <p>Streamlit Dashboard + XGBoost + LSTM, YOY analytics, KPIs,
-               heatmaps, island selection, forecast to 2026.</p>
-            <a class="btn" href="https://pasajeros-canarias.streamlit.app" target="_blank">Open Streamlit</a>
-            <a class="btn" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" style="background: var(--accent)" target="_blank">GitHub</a>
-        </div>
+    <!-- ⭐ FEATURED CANARY DASHBOARD -->
+    <div class="featured-card">
+        <img src="https://dummyimage.com/800x400/61a5c2/ffffff&text=🌴+Canary+Islands+Forecast+Dashboard" alt="">
+        <h3>🌴 ✈️ Canary Islands Air Passenger Forecasting</h3>
+        <p>
+            My flagship Streamlit dashboard: forecasts to 2026, YOY comparison, island details, seasonality heatmaps, KPIs, ML models (XGBoost + LSTM).  
+            Designed for a real Canarian tourism use case.  
+        </p>
+        <a class="btn" href="https://pasajeros-canarias.streamlit.app" target="_blank">Open Dashboard</a>
+        <a class="btn" style="background: var(--accent); color: white;" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank">GitHub</a>
     </div>
 
-    <!-- Kalima -->
+    <!-- Weather / Kalima -->
     <div class="card">
-        <img src="https://dummyimage.com/600x300/20b2aa/ffffff&text=Kalima+Weather+Dashboard" alt="">
+        <img src="https://dummyimage.com/600x300/f7ede2/014f86&text=🌫️+Kalima+Weather+Dashboard" alt="">
         <div class="card-content">
             <h3>🌫️ Kalima & Weather NoSQL Dashboard</h3>
-            <p>MongoDB + Streamlit + AQ data. PM10/PM2.5 analysis,
-               Kalima prediction, charts and early detection.</p>
+            <p>MongoDB + Streamlit, PM10/PM2.5 analysis, daily Kalima prediction, air quality intelligence.</p>
             <a class="btn" href="#" target="_blank">Open Streamlit</a>
-            <a class="btn" href="https://github.com/paulinap92/project_canary_weather_nosql_dashboard" style="background: var(--accent)" target="_blank">GitHub</a>
+            <a class="btn" style="background: var(--accent)" href="https://github.com/paulinap92/project_canary_weather_nosql_dashboard" target="_blank">GitHub</a>
         </div>
     </div>
 
     <!-- Sales -->
     <div class="card">
-        <img src="https://dummyimage.com/600x300/3e5ea8/ffffff&text=Sales+Monitoring+System" alt="">
+        <img src="https://dummyimage.com/600x300/2a6f97/ffffff&text=📊+Sales+Monitoring" alt="">
         <div class="card-content">
             <h3>📊 Sales Monitoring System (XYZ)</h3>
-            <p>CSV ingestion pipeline, anomaly detection, dashboards,
-               email reports, Docker microservice architecture.</p>
+            <p>Complete data pipeline + anomaly detection + daily reports + dashboards + email sender.</p>
             <a class="btn" href="https://github.com/paulinap92/sales_monitoring_system" target="_blank">GitHub</a>
         </div>
     </div>
 
-    <!-- AI Events -->
+    <!-- Event Manager -->
     <div class="card">
-        <img src="https://dummyimage.com/600x300/7c6ae6/ffffff&text=AI+Event+Manager" alt="">
+        <img src="https://dummyimage.com/600x300/014f86/ffffff&text=🧠+AI+Event+Manager" alt="">
         <div class="card-content">
             <h3>🧠 Event Manager + AI Microservices</h3>
-            <p>API Gateway + Flask microservices, ML recommendations,
-               sentiment analysis, authentication, Docker Compose.</p>
+            <p>API Gateway, ML recommendations, sentiment analysis, user system, Docker microservices.</p>
             <a class="btn" href="https://github.com/paulinap92/event_manager" target="_blank">GitHub</a>
         </div>
     </div>
@@ -276,31 +291,25 @@
 
 <section class="about">
     <p id="about1">
-        Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain. I specialize
-        in machine learning, forecasting and dashboards.
+        Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain.
     </p>
     <p id="about2">
-        I work with Python, Streamlit, Pandas, MongoDB, MySQL, XGBoost,
-        neural networks and Docker. I build end-to-end systems.
+        I build full ML solutions end-to-end, from data pipelines to deployed dashboards.
     </p>
 </section>
 
 <h2 id="contact-title">Contact Me</h2>
 
 <div class="contact">
-    <a href="mailto:your@email">
-        📧 Email
-    </a>
-    <a href="https://github.com/paulinap92" target="_blank">
-        💻 GitHub
-    </a>
-    <a href="https://www.linkedin.com" target="_blank">
-        🔗 LinkedIn
-    </a>
+    <a href="mailto:your@email">📧 Email</a>
+    <a href="https://github.com/paulinap92" target="_blank">💻 GitHub</a>
+    <a href="https://linkedin.com" target="_blank">🌐 LinkedIn</a>
 </div>
 
 <footer>
-    Made with ❤️ by Paulina · 2025
+    <p style="text-align:center; padding:20px; color:white; background:var(--blue-dark)">
+        © 2025 Paulina — Data Science & AI Portfolio
+    </p>
 </footer>
 
 </body>
