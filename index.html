@@ -3,488 +3,471 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Paulina – Data Scientist & AI Developer</title>
+<title>🐍 Paulina | Data Scientist & AI Engineer · Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Nunito", sans-serif;
-        background: #e9f6ff;
-        color: #0f2d3b;
-    }
+body{margin:0;font-family:"Nunito",sans-serif;background:#e9f6ff;color:#0f2d3b}
+:root{--blue1:#46b5e8;--blue2:#2c88b8;--blue3:#0f3f55}
 
-    :root {
-        --blue1: #46b5e8;
-        --blue2: #2c88b8;
-        --blue3: #0f3f55;
-        --aqua: #5ad6c8;
-        --white: #ffffff;
-    }
+header{
+  background:linear-gradient(135deg,var(--blue2),var(--blue1));
+  padding:80px 20px 50px;
+  color:white;
+  text-align:center;
+  position:relative
+}
 
-    /* HEADER */
-    header {
-        background: linear-gradient(135deg, var(--blue2), var(--blue1));
-        padding: 80px 20px 50px 20px;
-        color: white;
-        text-align: center;
-        position: relative;
-    }
+.lang-switch{position:absolute;top:20px;right:20px}
+.lang-switch button{
+  background:rgba(255,255,255,.9);
+  border:none;
+  padding:7px 12px;
+  margin-left:5px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer
+}
 
-    /* MINI PHOTO LEFT */
-    .mini-photo {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        width: 95px;
-        height: 95px;
-        border-radius: 100%;
-        border: 3px solid white;
-        object-fit: cover;
-        background: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.22);
-    }
+h1{font-size:2.8rem;margin-bottom:8px;font-weight:900}
+h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-top:70px}
 
-    /* LANGUAGE SWITCH */
-    .lang-switch {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-    .lang-switch button {
-        background: rgba(255,255,255,0.88);
-        border: none;
-        padding: 7px 12px;
-        margin-left: 5px;
-        border-radius: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        color: var(--blue3);
-        transition: 0.2s;
-    }
-    .lang-switch button:hover {
-        background: var(--aqua);
-        color: #003435;
-    }
+.flagship-title{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px
+}
 
-    h1 {
-        font-size: 2.8rem;
-        margin-bottom: 8px;
-        font-weight: 900;
-    }
+.flagship-turtle{
+  width:65px;
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,.28))
+}
 
-    h2 {
-        text-align: center;
-        font-size: 2.3rem;
-        font-weight: 800;
-        color: var(--blue3);
-        margin-top: 70px;
-    }
+/* ===== FLAGSHIP ===== */
+.featured-container{max-width:1050px;margin:30px auto;padding:20px}
+.featured-card{
+  background:white;
+  border-radius:20px;
+  border:4px solid #bfefff;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  padding-bottom:25px
+}
+.featured-card h3{
+  padding:20px;
+  margin:0;
+  font-size:2rem;
+  font-weight:900;
+  color:var(--blue3)
+}
 
-    /* FEATURED PROJECT */
-    .featured-container {
-        max-width: 1050px;
-        margin: 30px auto;
-        padding: 20px;
-    }
+/* ===== SHARED ===== */
+.project-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  padding:10px 20px;
+  flex-wrap:wrap
+}
 
-    .featured-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        border: 4px solid #bfefff;
-        padding-bottom: 25px;
-        position: relative;
-    }
+.btn{
+  background:var(--blue2);
+  color:white;
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none
+}
 
-    .featured-card h3 {
-        padding: 20px;
-        margin: 0;
-        font-size: 2rem;
-        font-weight: 900;
-        color: var(--blue3);
-        position: relative;
-    }
+.btn-secondary{
+  background:var(--blue1);
+  color:#003c3c
+}
 
-    /* PROJECTS GRID */
-    h2.subsection {
-        margin-top: 70px;
-        font-size: 2rem;
-        color: var(--blue2);
-    }
+.tech-badges{
+  margin:10px 20px;
+  padding-bottom:10px;
+  border-bottom:1px dashed #cceeff;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center
+}
 
-    .projects {
-        max-width: 1150px;
-        margin: 0 auto;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-        gap: 25px;
-    }
+.badge{padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
+.badge-python{background:#ffdd54}
+.badge-pandas{background:#150458;color:white}
+.badge-flask{background:#111;color:white}
+.badge-docker{background:#0db7ed;color:white}
+.badge-sql{background:#336791;color:white}
+.badge-oop{background:#df7c00;color:white}
 
-    .card {
-        background: white;
-        border-radius: 18px;
-        overflow: hidden;
-        border: 4px solid #bfefff;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        transition: 0.3s;
-    }
-    .card:hover { transform: scale(1.02); }
+/* ===== PROJECT CARDS ===== */
+.subsection{
+  text-align:center;
+  margin-top:70px;
+  font-size:2rem;
+  color:var(--blue2)
+}
 
-    .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
+.projects{
+  max-width:1050px;
+  margin:0 auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px
+}
 
-    .card-content { padding: 20px; }
+.card{
+  background:white;
+  border-radius:18px;
+  border:4px solid #bfefff;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+  overflow:hidden
+}
 
-    .card-content h3 {
-        margin-top: 0;
-        font-size: 1.4rem;
-        font-weight: 800;
-        color: var(--blue3);
-    }
+/* CARD HEADER WITH TITLE */
+.card-header{
+  position:relative
+}
 
-    /* BUTTONS */
-    .btn {
-        background: var(--blue2);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 12px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-block;
-        margin: 15px 0 0 20px;
-        transition: 0.3s;
-    }
-    .btn:hover { background: var(--blue1); }
+.card-header img{
+  width:100%;
+  height:60px;
+  object-fit:cover
+}
 
-    /* TECH BADGES */
-    .tech-badges {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
+.card-title{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:12px 16px;
+  background:linear-gradient(
+    to top,
+    rgba(15,45,59,0.85),
+    rgba(15,45,59,0.35),
+    transparent
+  );
+  color:white;
+  font-size:1.25rem;
+  font-weight:900;
+  text-align:center
+}
 
-    .badge { padding: 4px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+.card-content{
+  padding:20px;
+  text-align:center
+}
 
-    .badge-python { background:#ffdd54;color:#3a2f00; }
-    .badge-streamlit { background:#ff4b4b;color:white; }
-    .badge-xgb { background:#0c5eb4;color:white; }
-    .badge-lstm { background:#a65fd3;color:white; }
-    .badge-pandas { background:#150458;color:white; }
-    .badge-plotly { background:#3f4f75;color:white; }
-    .badge-docker { background:#0db7ed;color:white; }
-    .badge-flask { background:#111;color:white; }
-    .badge-sql { background:#336791;color:white; }
-    .badge-oop { background:#df7c00;color:white; }
+/* ===== ABOUT ===== */
+.about-wrapper{
+  max-width:900px;
+  margin:40px auto;
+  display:flex;
+  align-items:center;
+  gap:40px;
+  padding:0 20px
+}
 
-    /* CHALLENGES */
-    .challenges {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 25px;
-    }
+.about-wrapper img{
+  width:220px;
+  border-radius:30px;
+  border:4px solid #bfefff;
+  box-shadow:0 8px 25px rgba(0,0,0,.25)
+}
 
-    .challenge-card {
-        background: white;
-        border-radius: 20px;
-        border: 3px solid #cceeff;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        text-align: center;
-        padding-bottom: 20px;
-        transform: scale(0.9);
-    }
+.about{font-size:1.17rem;line-height:1.8}
 
-    .challenge-card img {
-        width: 130px;
-        margin-top: 20px;
-    }
+.contact{
+  text-align:center;
+  margin:40px 0 70px;
+  font-size:1.3rem;
+  font-weight:700
+}
 
-    /* ABOUT + CONTACT */
-    .about {
-        max-width: 850px;
-        margin: 40px auto;
-        padding: 0 20px;
-        font-size: 1.17rem;
-        line-height: 1.8;
-    }
+.challenge-icon {
+  width: 80px;
+  margin: 10px auto 5px;
+  display: block;
+}
 
-    .contact {
-        text-align: center;
-        margin: 40px 0 70px 0;
-        font-size: 1.3rem;
-        font-weight: 700;
-    }
+.challenge-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--blue3);
+  margin: 10px 0;
+}
+
+.flagship-icon {
+  width: 260px;        /* 220–300 wygląda dobrze */
+  border-radius: 25px;
+  border: 4px solid #bfefff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
 </style>
 
-
-
 <script>
-    window.onload = () => setLang('en');
-/* TRANSLATION SYSTEM */
+window.onload=()=>setLang('en');
 const t = {
-    en:{
-        projects:"🇮🇨 Flagship Project",
-        other:"Other Important Projects",
-        challenges:"Small & Large Challenges",
-        about_title:"About Me",
-        contact:"Contact",
-        about:"Hi! I'm Paulina — a Data Scientist & AI Developer based in Spain.",
-        p1:"Tourism dashboard with forecasting models (XGBoost, LSTM), KPIs and heatmaps.",
-        p2:"CSV ingestion, anomaly detection, reporting, Flask, Docker.",
-        p3:"Python application with SQL analytics.",
-        p4:"Abstract Factory architecture with TXT/JSON processing.",
-        turtle:"Mini challenge with SQL analytical tasks."
-    },
+  en: {
+    projects: "Flagship Project",
+    other: "Other Important Projects",
+    challenges: "Challenges",
+    about: "Hi! I'm Paulina — Data Scientist & AI Developer based in Spain.",
 
-    es:{
-        projects:"🇮🇨 Proyecto insignia",
-        other:"Otros proyectos importantes",
-        challenges:"Retos grandes y pequeños",
-        about_title:"Sobre mí",
-        contact:"Contacto",
-        about:"Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España.",
-        p1:"Panel turístico con modelos de predicción (XGBoost, LSTM), KPIs y heatmaps.",
-        p2:"Ingesta CSV, anomalías, informes, Flask, Docker.",
-        p3:"Aplicación en Python con análisis SQL.",
-        p4:"Patrón Abstract Factory con procesamiento de TXT/JSON.",
-        turtle:"Mini reto con ejercicios analíticos en SQL."
-    },
+    p1: "Interactive dashboard for airline passenger analysis and forecasting, using XGBoost and LSTM models with KPIs and clear visualizations.",
+    p2: "Python application for processing store transaction data, including CSV ingestion, data cleaning, anomaly detection, and automated reporting.",
+    p3: "Python application that processes data from files and SQL queries, performing basic analytical operations and summaries for travel agency data.",
+    p4: "Python project for processing subscription data for meal catering services, implemented using the Abstract Factory pattern with TXT and JSON formats.",
 
-    pl:{
-        projects:"🇮🇨 Flagowy projekt",
-        other:"Inne ważne projekty",
-        challenges:"Mniejsze i duże wyzwania",
-        about_title:"O mnie",
-        contact:"Kontakt",
-        about:"Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.",
-        p1:"Dashboard turystyczny z modelami XGBoost, LSTM, KPI i heatmapami.",
-        p2:"Przetwarzanie CSV, detekcja anomalii, raporty, Flask, Docker.",
-        p3:"Projekt Python z analiza SQL.",
-        p4:"Wzorzec Abstract Factory + TXT/JSON.",
-        turtle:"Mały challenge z zadaniami analitycznymi SQL."
-    }
+    turtle: "Analytical SQL challenge focused on data exploration and problem solving."
+  },
+
+  es: {
+    projects: "Proyecto principal",
+    other: "Otros proyectos importantes",
+    challenges: "Retos",
+    about: "¡Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España.",
+
+    p1: "Dashboard interactivo para el análisis y la predicción de pasajeros aéreos, utilizando modelos XGBoost y LSTM con KPIs y visualizaciones claras.",
+    p2: "Aplicación en Python para el procesamiento de datos de transacciones de una tienda, incluyendo carga de CSV, limpieza de datos, detección de anomalías y reportes automáticos.",
+    p3: "Aplicación en Python que procesa datos desde archivos y consultas SQL, realizando operaciones analíticas básicas y resúmenes para una agencia de viajes.",
+    p4: "Proyecto en Python para el procesamiento de datos de suscripciones a servicios de catering, implementado con el patrón Abstract Factory y soporte para TXT y JSON.",
+
+    turtle: "Reto analítico de SQL enfocado en exploración de datos y resolución de problemas."
+  },
+
+  pl: {
+    projects: "Projekt flagowy",
+    other: "Inne ważne projekty",
+    challenges: "Wyzwania",
+    about: "Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.",
+
+    p1: "Interaktywny dashboard do analizy i prognozowania liczby pasażerów linii lotniczych, wykorzystujący modele XGBoost i LSTM oraz czytelne wizualizacje KPI.",
+    p2: "Aplikacja w Pythonie do przetwarzania danych transakcyjnych ze sklepu, obejmująca wczytywanie CSV, czyszczenie danych, wykrywanie anomalii oraz automatyczne raportowanie.",
+    p3: "Aplikacja w Pythonie przetwarzająca dane z plików oraz zapytań SQL, wykonująca podstawowe operacje analityczne i podsumowania dla biura podróży.",
+    p4: "Projekt w Pythonie do przetwarzania danych o subskrypcjach cateringów żywieniowych, zaimplementowany z użyciem wzorca Abstract Factory oraz formatów TXT i JSON.",
+
+    turtle: "Analityczne wyzwanie SQL skupione na eksploracji danych i rozwiązywaniu problemów."
+  }
 };
 
-function setLang(l){
-    document.getElementById("projects-title").textContent = t[l].projects;
-    document.getElementById("other-title").textContent = t[l].other;
-    document.getElementById("challenge-title").textContent = t[l].challenges;
-    document.getElementById("about-title").textContent = t[l].about_title;
-    document.getElementById("contact-title").textContent = t[l].contact;
 
-    document.getElementById("about-text").textContent = t[l].about;
-    document.getElementById("p1-desc").textContent = t[l].p1;
-    document.getElementById("p2-desc").textContent = t[l].p2;
-    document.getElementById("p3-desc").textContent = t[l].p3;
-    document.getElementById("p4-desc").textContent = t[l].p4;
-    document.getElementById("turtle-desc").textContent = t[l].turtle;
+function setLang(l){
+ document.getElementById("projects-text").textContent=t[l].projects;
+ document.getElementById("other-title").textContent=t[l].other;
+ document.getElementById("challenge-title").textContent=t[l].challenges;
+ document.getElementById("about-text").textContent=t[l].about;
+ document.getElementById("p1-desc").textContent=t[l].p1;
+ document.getElementById("p2-desc").textContent=t[l].p2;
+ document.getElementById("p3-desc").textContent=t[l].p3;
+ document.getElementById("p4-desc").textContent=t[l].p4;
+ document.getElementById("turtle-desc").textContent=t[l].turtle;
 }
 </script>
-
 </head>
 
 <body>
 
 <header>
-    
-
-    <h1>Paulina – Data Scientist & AI Developer</h1>
-
-    <div class="lang-switch">
-        <button onclick="setLang('en')">🇬🇧</button>
-        <button onclick="setLang('es')">🇪🇸</button>
-        <button onclick="setLang('pl')">🇵🇱</button>
-    </div>
+  <h1>Paulina | Data Scientist & AI Engineer · Portfolio</h1>
+  <div class="lang-switch">
+    <button onclick="setLang('en')">🇬🇧</button>
+    <button onclick="setLang('es')">🇪🇸</button>
+    <button onclick="setLang('pl')">🇵🇱</button>
+  </div>
 </header>
 
-<h2 id="projects-title" style="display:flex;justify-content:center;align-items:center;gap:18px;">
-    🇮🇨 Flagship Project
-    <img
-        src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/canary-turtle.png"
-        style="
-            width:75px;
-            transform:rotate(0deg);
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.28));
-        "
-    >
+<h2 class="flagship-title">
+  <span id="projects-text"></span>
+  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/canary-turtle.png" class="flagship-turtle">
 </h2>
 
+<!-- FLAGSHIP -->
 <div class="featured-container">
-    <div class="featured-card">
+  <div class="featured-card card">
 
-        <h3 style="position:relative;">
-            🌴✈️ Canary Islands Air Passengers Forecasting
-
-            <!-- IKONA ŻÓŁWIA -->
-           
-        </h3>
-
-        <div style="text-align:center;">
-            <img 
-                src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/dashboard_icon.png"
-                style="width:340px;border-radius:25px;border:4px solid #bfefff;box-shadow:0 8px 25px rgba(0,0,0,0.25);">
-        </div>
-
-        <p id="p1-desc" style="padding:20px;">
-            Dashboard turystyczny z XGBoost, LSTM, KPI i heatmapami.
-        </p>
-
-        <div class="tech-badges" style="padding-left:20px;">
-            <span class="badge badge-python">Python</span>
-            <span class="badge badge-streamlit">Streamlit</span>
-            <span class="badge badge-xgb">XGBoost</span>
-            <span class="badge badge-lstm">LSTM</span>
-            <span class="badge badge-pandas">Pandas</span>
-            <span class="badge badge-plotly">Plotly</span>
-            <span class="badge badge-docker">Docker</span>
-        </div>
-
-        <a class="btn" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank">Open Dashboard</a>
-        <a class="btn" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" style="background:var(--blue1);color:#003c3c;" target="_blank">GitHub</a>
+    <!-- HEADER jak w innych kartach -->
+    <div class="card-header">
+      <img src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20">
+      <div class="card-title">
+        🌴✈️ Canary Islands Air Passengers Forecasting
+      </div>
     </div>
+
+    <!-- CONTENT -->
+    <div class="card-content">
+
+      <div class="project-actions">
+         <p id="p1-desc" style="padding:20px;text-align:center"></p>
+        <a class="btn" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank">
+          Open Dashboard
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank">
+          GitHub
+        </a>
+      </div>
+
+      <div style="text-align:center;margin-top:10px;">
+        <img
+            src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/dashboard_icon.png"
+            class="flagship-icon">
+
+      </div>
+
+     
+
+      <div class="tech-badges">
+        <span class="badge badge-python">Python</span>
+        <span class="badge badge-pandas">Pandas</span>
+        <span class="badge badge-docker">Docker</span>
+        <span class="badge badge-flask">Flask</span>
+        <span class="badge badge-sql">SQL</span>
+        <span class="badge badge-oop">XGBoost</span>
+        <span class="badge badge-oop">LSTM</span>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 
-
-<h2 id="other-title" class="subsection">Inne ważne projekty</h2>
-
+<!-- OTHER PROJECTS -->
+<h2 id="other-title" class="subsection"></h2>
 <section class="projects">
 
-    <div class="card">
-        <img src="https://dummyimage.com/600x300/239a94/ffffff&text=Transaction+Data+Report">
-        <div class="card-content">
-            <h3>📊 Transaction Data Report</h3>
-            <p id="p2-desc"></p>
-
-            <div class="tech-badges">
-                <span class="badge badge-python">Python</span>
-                <span class="badge badge-pandas">Pandas</span>
-                <span class="badge badge-flask">Flask</span>
-                <span class="badge badge-docker">Docker</span>
-            </div>
-
-            <a class="btn" href="https://github.com/paulinap92/transaction-data-report" target="_blank">GitHub</a>
-        </div>
+<div class="card">
+  <div class="card-header">
+   <img src="https://dummyimage.com/50x300/239a94/ffffff&text=%20">
+<div class="card-title">Transaction Data Report</div>
+</div>
+  <div class="card-content">
+    <p id="p2-desc"></p>
+    <div class="project-actions">
+      <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">GitHub</a>
     </div>
-
-    <div class="card">
-        <img src="https://dummyimage.com/600x300/4cc7c2/ffffff&text=Travel+Agency+SQL">
-        <div class="card-content">
-            <h3>🌍 Travel Agency — SQL Python project</h3>
-            <p id="p3-desc"></p>
-
-            <div class="tech-badges">
-                <span class="badge badge-sql">SQL</span>
-                <span class="badge badge-python">Python</span>
-                <span class="badge badge-pandas">Pandas</span>
-            </div>
-
-            <a class="btn" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">GitHub</a>
-        </div>
+    
+    <div class="tech-badges">
+      <span class="badge badge-python">Python</span>
+      <span class="badge badge-pandas">Pandas</span>
+      <span class="badge badge-flask">Flask</span>
+      <span class="badge badge-docker">Docker</span>
+      <span class="badge badge-docker">Isolation Forest</span>
     </div>
-
-    <div class="card">
-        <img src="https://dummyimage.com/600x300/c6f5f3/004b4b&text=Subscription+Data+Service">
-        <div class="card-content">
-            <h3>🧩 Subscription Data Service</h3>
-            <p id="p4-desc"></p>
-
-            <div class="tech-badges">
-                <span class="badge badge-python">Python</span>
-                <span class="badge badge-oop">OOP</span>
-                <span class="badge badge-pandas">JSON</span>
-                <span class="badge badge-pandas">TXT</span>
-            </div>
-
-            <a class="btn" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">GitHub</a>
-        </div>
-    </div>
-
-</section>
-
-
-
-<h2 id="challenge-title" class="subsection">Mniejsze i duże wyzwania</h2>
-
-<section class="challenges">
-
-    <div class="challenge-card"> 
-        <img 
-            src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/turtle.png"
-            style="width:130px;">
-
-        <div class="card-content">
-            <h3>🐢 Spark SQL Turtle Challenge</h3>
-            <p id="turtle-desc"></p>
-
-            <div class="tech-badges" style="justify-content:center;">
-                <span class="badge badge-python">Python</span>
-                <span class="badge badge-pandas">Pandas</span>
-                <span class="badge badge-oop">EDA</span>
-            </div>
-
-            <a class="btn" href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb" target="_blank">Open challenge</a>
-        </div>
-    </div>
-
-</section>
-
-
-
-<h2 id="about-title">O mnie</h2>
-
-
-<div style="
-    max-width:900px;
-    margin:40px auto;
-    display:flex;
-    align-items:center;
-    gap:40px;
-    padding:0 20px;
-">
-
-    <!-- TWOJE ZDJĘCIE OBOK TEKSTU -->
-    <img 
-        src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/ppioo.bmp"
-        style="
-            width:220px;
-            border-radius:30px;
-            border:4px solid #bfefff;
-            box-shadow:0 8px 25px rgba(0,0,0,0.25);
-            flex-shrink:0;
-        "
-    >
-
-    <!-- TEKST ABOUT -->
-    <div class="about" id="about-text" style="margin:0;">
-        Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.
-    </div>
-
+  </div>
 </div>
 
+<div class="card">
+  <div class="card-header">
+    <img src="https://dummyimage.com/50x300/4cc7c2/ffffff&text=%20">
+    <div class="card-title">Travel Agency</div>
+</div>
+  <div class="card-content">
+    <p id="p3-desc"></p>
+    <div class="project-actions">
+    <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">GitHub</a>
+    </div>
+  
+    <div class="tech-badges">
+      <span class="badge badge-sql">SQL</span>
+      <span class="badge badge-python">Python</span>
+      <span class="badge badge-pandas">File processing</span>
+    </div>
+  </div>
+</div>
 
-<h2 id="contact-title">Kontakt</h2>
+<div class="card">
+  <div class="card-header">
+    <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
+    <div class="card-title">Subscription Service</div>
+  </div>
+  <div class="card-content">
 
+     <p id="p4-desc"></p>
+
+    <div class="project-actions">
+      <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">GitHub</a>
+    </div>
+   
+    <div class="tech-badges">
+      <span class="badge badge-python">Python</span>
+      <span class="badge badge-oop">OOP</span>
+      <span class="badge badge-pandas">JSON</span>
+      <span class="badge badge-pandas">TXT</span>
+      <span class="badge badge-oop">Abstract Factory</span>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- CHALLENGES -->
+<h2 id="challenge-title" class="subsection"></h2>
+<section class="projects">
+
+  <div class="card">
+
+    <!-- NORMALNY HEADER JAK W INNYCH KARTACH -->
+    <div class="card-header">
+      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
+          <!-- TYTUŁ -->
+      <div class="card-title">Spark SQL Turtle Challenge</div>
+    </div>
+
+    <div class="card-content">
+
+      <!-- IKONA -->
+      <img
+        src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/turtle.png"
+        class="challenge-icon"
+        alt="Turtle challenge icon"
+      >
+
+  
+
+      <!-- OPIS -->
+      <p id="turtle-desc"></p>
+
+      <!-- PRZYCISK -->
+      <div class="project-actions">
+        <a
+          class="btn"
+          href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb"
+          target="_blank"
+        >
+          Open challenge
+        </a>
+      </div>
+
+      <!-- TECHNOLOGIE -->
+      <div class="tech-badges">
+        <span class="badge badge-python">Python</span>
+        <span class="badge badge-pandas">Spark</span>
+        <span class="badge badge-oop">EDA</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<h2>About me</h2>
+<div class="about-wrapper">
+  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/ppioo.bmp">
+  <div class="about" id="about-text"></div>
+</div>
+
+<h2>Contact</h2>
 <div class="contact">
-    <a href="mailto:your@email">
-        📧 Email
-    </a>
-    <a href="https://github.com/paulinap92" target="_blank">
-        💻 GitHub
-    </a>
-    <a href="https://linkedin.com" target="_blank">
-        🌐 LinkedIn
-    </a>
+  <a href="paulina.piotrowska.p@gmail.com">📧 Email</a> ·
+  <a href="https://github.com/paulinap92" target="_blank">💻 GitHub</a> ·
+  <a href="https://www.linkedin.com/in/paulina-piotrowska-859b17122/" target="_blank">🌐 LinkedIn</a>
 </div>
 
 </body>
