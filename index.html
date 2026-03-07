@@ -45,21 +45,15 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   filter:drop-shadow(0 4px 6px rgba(0,0,0,.28))
 }
 
-/* ===== FLAGSHIP ===== */
-.featured-container{max-width:1050px;margin:30px auto;padding:20px}
-.featured-card{
-  background:white;
-  border-radius:20px;
-  border:4px solid #bfefff;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
-  padding-bottom:25px
-}
-.featured-card h3{
+/* ===== FLAGSHIP GRID (2 cards side-by-side) ===== */
+.featured-grid{
+  max-width:1050px;
+  margin:30px auto;
   padding:20px;
-  margin:0;
-  font-size:2rem;
-  font-weight:900;
-  color:var(--blue3)
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:25px;
+  align-items:stretch;
 }
 
 /* ===== SHARED ===== */
@@ -77,7 +71,10 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   padding:12px 20px;
   border-radius:12px;
   font-weight:700;
-  text-decoration:none
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
 
 .btn-secondary{
@@ -85,14 +82,67 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   color:#003c3c
 }
 
+/* ===== TECH BADGES (Other projects + Challenge) ===== */
 .tech-badges{
   margin:10px 20px;
   padding-bottom:10px;
   border-bottom:1px dashed #cceeff;
+
+  display:grid;
+  grid-template-columns:repeat(4, max-content);
+  justify-content:center;
+  gap:10px 10px;
+
+  min-height:92px;     /* max 8 badge => 2 rzędy */
+  align-content:start;
+}
+
+/* ===== MICRO BADGES (Microservices + Research cards) ===== */
+.micro-badges{
+  margin:14px 0 0;
+  padding:0;
+  border:0;
+
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  justify-content:center
+  justify-content:center;
+  gap:10px;
+
+  min-height:96px;        /* miejsce na 2 rzędy w subcardach */
+  align-content:flex-start;
+}
+
+
+/* ===== PILLS (always 2 + 1) ===== */
+.micro-tag{
+  margin-top:12px;
+
+  display:grid;
+  grid-template-columns:repeat(2, max-content);
+  justify-content:center;
+  gap:10px 10px;
+
+  min-height:92px;
+  align-content:start;
+}
+
+/* 3rd pill centered on second row */
+.micro-tag .pill:last-child{
+  grid-column:1 / -1;
+  justify-self:center;
+}
+
+/* Pill style */
+.pill{
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:800;
+  background:#e7f7ff;
+  border:1px solid #bfefff;
+  color:#0f3f55;
+  white-space:nowrap;
+  text-align:center;
 }
 
 .badge{padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
@@ -117,7 +167,8 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   padding:20px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px
+  gap:25px;
+  align-items:stretch;
 }
 
 .card{
@@ -125,19 +176,15 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   border-radius:18px;
   border:4px solid #bfefff;
   box-shadow:0 6px 20px rgba(0,0,0,.1);
-  overflow:hidden
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  height:100%;
 }
 
 /* CARD HEADER WITH TITLE */
-.card-header{
-  position:relative
-}
-
-.card-header img{
-  width:100%;
-  height:60px;
-  object-fit:cover
-}
+.card-header{position:relative}
+.card-header img{width:100%;height:60px;object-fit:cover}
 
 .card-title{
   position:absolute;
@@ -159,7 +206,21 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
 
 .card-content{
   padding:20px;
-  text-align:center
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+/* Stała przestrzeń na opis */
+.card-content p{
+  min-height:150px;
+}
+
+/* STOPKA karty – zawsze na dole */
+.card-footer{
+  margin-top:auto;
+  padding-top:8px;
 }
 
 /* ===== ABOUT ===== */
@@ -194,21 +255,114 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   display: block;
 }
 
-.challenge-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--blue3);
-  margin: 10px 0;
+.flagship-icon{
+  width:260px;
+  height:200px;
+  object-fit:contain;
+  display:block;
+  margin:16px auto 10px;
+  border-radius:25px;
+  border:4px solid #bfefff;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
 }
 
-.flagship-icon {
-  width: 260px;        /* 220–300 wygląda dobrze */
-  border-radius: 25px;
-  border: 4px solid #bfefff;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+/* =========================
+   MICROservices SECTION
+   ========================= */
+.microservices-wrap{
+  max-width:1050px;
+  margin:55px auto 0;
+  padding:0 20px 10px;
 }
 
+.microservices-card{
+  background:white;
+  border-radius:20px;
+  border:4px solid #bfefff;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  overflow:hidden;
+}
 
+.microservices-header{
+  padding:18px 18px 14px;
+  text-align:center;
+  background:linear-gradient(135deg, rgba(44,136,184,.14), rgba(70,181,232,.08));
+  border-bottom:1px dashed #cceeff;
+}
+
+.microservices-header h3{
+  margin:0;
+  font-size:1.9rem;
+  font-weight:900;
+  color:var(--blue3);
+}
+
+.microservices-header p{
+  margin:10px auto 0;
+  max-width:860px;
+  font-size:1.05rem;
+  line-height:1.7;
+  color:#123b4a;
+}
+
+.microservices-subgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  padding:18px;
+}
+
+.micro-subcard{
+  background:linear-gradient(180deg, rgba(233,246,255,.55), rgba(255,255,255,1));
+  border-radius:18px;
+  border:3px solid #bfefff;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  padding:16px 16px 14px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+}
+
+.micro-subcard h4{
+  margin:6px 0 8px;
+  font-size:1.25rem;
+  font-weight:900;
+  color:var(--blue3);
+}
+
+/* odstępy jak w innych kartach */
+.micro-subcard p{
+  margin:0 0 10px;
+  line-height:1.6;
+  color:#173f4e;
+  min-height:100px;
+}
+
+.micro-badges .badge{border:1px solid #bfefff;}
+
+/* Extra badge colors */
+.badge-micro{background:#0f3f55;color:white}
+.badge-ml{background:#df7c00;color:white}
+.badge-nlp{background:#111;color:white}
+.badge-api{background:#2c88b8;color:white}
+.badge-ci{background:#4cc7c2;color:#003c3c}
+
+/* STOPKA w micro-subcard – GitHub zawsze na dole */
+.micro-footer{
+  margin-top:auto;
+  padding-top:10px;
+  display:flex;
+  justify-content:center;
+}
+
+/* ===== NIEBIESKI GitHub kot (wszędzie taki sam) ===== */
+.gh-ico{
+  width:18px;
+  height:18px;
+  fill:var(--blue2);
+  display:inline-block;
+  vertical-align:-3px;
+}
 </style>
 
 <script>
@@ -221,11 +375,43 @@ const t = {
     about: "Hi! I'm Paulina — Data Scientist & AI Developer based in Spain.",
 
     p1: "Interactive dashboard for airline passenger analysis and forecasting, using XGBoost and LSTM models with KPIs and clear visualizations.",
+    calima: "Interactive Calima monitoring dashboard for the Canary Islands: map-based view, severity levels, historical trends, and automated data updates from OpenAir.",
+
     p2: "Python application for processing store transaction data, including CSV ingestion, data cleaning, anomaly detection, and automated reporting.",
     p3: "Python application that processes data from files and SQL queries, performing basic analytical operations and summaries for travel agency data.",
     p4: "Python project for processing subscription data for meal catering services, implemented using the Abstract Factory pattern with TXT and JSON formats.",
 
-    turtle: "Analytical SQL challenge focused on data exploration and problem solving."
+    turtle: "Analytical SQL challenge focused on data exploration and problem solving.",
+
+    complex: "Complex Projects",
+
+    micro_title: "AI Microservices Platform",
+    micro_desc: "A microservice-based ML platform. Each track is benchmarked in research, then integrated into an independent service.",
+
+    micro_b1: "Microservices",
+    micro_b2: "ML Research",
+    micro_b3: "Docker",
+    micro_b4: "API / REST",
+
+    platform_btn: "Platform (GitHub)",
+
+    rec_title: "Recommendation-based Classification Benchmark",
+    rec_desc: "Benchmark of multiple models for recommendation-driven classification. Goal: consistent evaluation and selecting the strongest approach.",
+    rec_b1: "Classification",
+    rec_b2: "Benchmark",
+    rec_b3: "Model selection",
+
+    sent_title: "Sentiment Analysis · Transformers (HF) vs ML",
+    sent_desc: "Sentiment analysis experiments comparing classical ML baselines with Hugging Face transformer models.",
+    sent_b1: "Sentiment",
+    sent_b2: "NLP / Transformers",
+    sent_b3: "Hugging Face",
+
+    evt_title: "Event Classification · MLP",
+    evt_desc: "Event classification research using an MLP baseline with a clean training pipeline and reproducible runs.",
+    evt_b1: "Classification",
+    evt_b2: "MLP",
+    evt_b3: "Pipeline",
   },
 
   es: {
@@ -235,11 +421,43 @@ const t = {
     about: "¡Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España.",
 
     p1: "Dashboard interactivo para el análisis y la predicción de pasajeros aéreos, utilizando modelos XGBoost y LSTM con KPIs y visualizaciones claras.",
+    calima: "Dashboard interactivo para monitorizar la Calima en Canarias: mapa, niveles de severidad, tendencias históricas y actualización automática de datos desde OpenAir.",
+
     p2: "Aplicación en Python para el procesamiento de datos de transacciones de una tienda, incluyendo carga de CSV, limpieza de datos, detección de anomalías y reportes automáticos.",
     p3: "Aplicación en Python que procesa datos desde archivos y consultas SQL, realizando operaciones analíticas básicas y resúmenes para una agencia de viajes.",
     p4: "Proyecto en Python para el procesamiento de datos de suscripciones a servicios de catering, implementado con el patrón Abstract Factory y soporte para TXT y JSON.",
 
-    turtle: "Reto analítico de SQL enfocado en exploración de datos y resolución de problemas."
+    turtle: "Reto analítico de SQL enfocado en exploración de datos y resolución de problemas.",
+
+    complex: "Proyectos complejos",
+
+    micro_title: "Plataforma de microservicios con IA",
+    micro_desc: "Plataforma modular: cada línea se investiga (benchmarks) y luego se integra como microservicio.",
+
+    micro_b1: "Microservicios",
+    micro_b2: "Investigación ML",
+    micro_b3: "Docker",
+    micro_b4: "API / REST",
+
+    platform_btn: "Plataforma (GitHub)",
+
+    rec_title: "Benchmark: clasificación basada en recomendaciones",
+    rec_desc: "Benchmark de varios modelos para clasificación impulsada por recomendaciones. Objetivo: evaluación consistente y mejor selección.",
+    rec_b1: "Clasificación",
+    rec_b2: "Benchmark",
+    rec_b3: "Selección de modelo",
+
+    sent_title: "Sentimiento · Transformers (HF) vs ML",
+    sent_desc: "Experimentos de sentimiento comparando ML clásico con transformers de Hugging Face.",
+    sent_b1: "Sentimiento",
+    sent_b2: "NLP / Transformers",
+    sent_b3: "Hugging Face",
+
+    evt_title: "Clasificación de eventos · MLP",
+    evt_desc: "Investigación de clasificación de eventos con baseline MLP y pipeline reproducible.",
+    evt_b1: "Clasificación",
+    evt_b2: "MLP",
+    evt_b3: "Pipeline",
   },
 
   pl: {
@@ -249,14 +467,45 @@ const t = {
     about: "Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.",
 
     p1: "Interaktywny dashboard do analizy i prognozowania liczby pasażerów linii lotniczych, wykorzystujący modele XGBoost i LSTM oraz czytelne wizualizacje KPI.",
+    calima: "Interaktywny dashboard do monitorowania kalimy na Wyspach Kanaryjskich: mapa, poziomy nasilenia, trendy historyczne oraz automatyczne aktualizacje danych ze źródeł OpenAir.",
+
     p2: "Aplikacja w Pythonie do przetwarzania danych transakcyjnych ze sklepu, obejmująca wczytywanie CSV, czyszczenie danych, wykrywanie anomalii oraz automatyczne raportowanie.",
     p3: "Aplikacja w Pythonie przetwarzająca dane z plików oraz zapytań SQL, wykonująca podstawowe operacje analityczne i podsumowania dla biura podróży.",
     p4: "Projekt w Pythonie do przetwarzania danych o subskrypcjach cateringów żywieniowych, zaimplementowany z użyciem wzorca Abstract Factory oraz formatów TXT i JSON.",
 
-    turtle: "Analityczne wyzwanie SQL skupione na eksploracji danych i rozwiązywaniu problemów."
+    turtle: "Analityczne wyzwanie SQL skupione na eksploracji danych i rozwiązywaniu problemów.",
+
+    complex: "Złożone projekty",
+
+    micro_title: "Platforma mikroserwisowa z ML",
+    micro_desc: "Platforma oparta o mikroserwisy: każdy track ma research/benchmark i potem jest integrowany jako osobny serwis.",
+
+    micro_b1: "Mikroserwisy",
+    micro_b2: "Research ML",
+    micro_b3: "Docker",
+    micro_b4: "API / REST",
+
+    platform_btn: "Platforma (GitHub)",
+
+    rec_title: "Benchmark: klasyfikacja oparta o rekomendacje",
+    rec_desc: "Benchmark różnych modeli dla klasyfikacji opartej o rekomendacje. Cel: spójna ewaluacja i wybór najlepszego podejścia.",
+    rec_b1: "Klasyfikacja",
+    rec_b2: "Benchmark",
+    rec_b3: "Dobór modelu",
+
+    sent_title: "Sentyment · Transformers (HF) vs ML",
+    sent_desc: "Eksperymenty sentymentu: porównanie klasycznych baseline’ów ML z transformerami (Hugging Face).",
+    sent_b1: "Sentyment",
+    sent_b2: "NLP / Transformers",
+    sent_b3: "Hugging Face",
+
+    evt_title: "Klasyfikacja eventów · MLP",
+    evt_desc: "Research klasyfikacji eventów z baseline’em MLP: pipeline treningu, strojenie i powtarzalne runy.",
+    evt_b1: "Klasyfikacja",
+    evt_b2: "MLP",
+    evt_b3: "Pipeline",
   }
 };
-
 
 function setLang(l){
  document.getElementById("projects-text").textContent=t[l].projects;
@@ -264,10 +513,44 @@ function setLang(l){
  document.getElementById("challenge-title").textContent=t[l].challenges;
  document.getElementById("about-text").textContent=t[l].about;
  document.getElementById("p1-desc").textContent=t[l].p1;
+ document.getElementById("calima-desc").textContent=t[l].calima;
  document.getElementById("p2-desc").textContent=t[l].p2;
  document.getElementById("p3-desc").textContent=t[l].p3;
  document.getElementById("p4-desc").textContent=t[l].p4;
  document.getElementById("turtle-desc").textContent=t[l].turtle;
+
+ document.getElementById("complex-text").textContent=t[l].complex;
+
+ document.getElementById("micro-title").textContent=t[l].micro_title;
+ document.getElementById("micro-desc").textContent=t[l].micro_desc;
+
+ document.getElementById("micro-b1").textContent=t[l].micro_b1;
+ document.getElementById("micro-b2").textContent=t[l].micro_b2;
+ document.getElementById("micro-b3").textContent=t[l].micro_b3;
+ document.getElementById("micro-b4").textContent=t[l].micro_b4;
+
+ document.getElementById("platform-btn-text").textContent=t[l].platform_btn;
+
+ document.getElementById("rec-title").textContent=t[l].rec_title;
+ document.getElementById("rec-desc").textContent=t[l].rec_desc;
+
+ document.getElementById("sent-title").textContent=t[l].sent_title;
+ document.getElementById("sent-desc").textContent=t[l].sent_desc;
+
+ document.getElementById("evt-title").textContent=t[l].evt_title;
+ document.getElementById("evt-desc").textContent=t[l].evt_desc;
+
+ document.getElementById("rec-b1").textContent=t[l].rec_b1;
+ document.getElementById("rec-b2").textContent=t[l].rec_b2;
+ document.getElementById("rec-b3").textContent=t[l].rec_b3;
+
+ document.getElementById("sent-b1").textContent=t[l].sent_b1;
+ document.getElementById("sent-b2").textContent=t[l].sent_b2;
+ document.getElementById("sent-b3").textContent=t[l].sent_b3;
+
+ document.getElementById("evt-b1").textContent=t[l].evt_b1;
+ document.getElementById("evt-b2").textContent=t[l].evt_b2;
+ document.getElementById("evt-b3").textContent=t[l].evt_b3;
 }
 </script>
 </head>
@@ -285,57 +568,227 @@ function setLang(l){
 
 <h2 class="flagship-title">
   <span id="projects-text"></span>
-  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/canary-turtle.png" class="flagship-turtle">
+  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/canary-turtle.png" class="flagship-turtle" alt="Turtle icon">
 </h2>
 
 <!-- FLAGSHIP -->
-<div class="featured-container">
-  <div class="featured-card card">
+<div class="featured-grid">
 
-    <!-- HEADER jak w innych kartach -->
+  <!-- CARD 1 -->
+  <div class="card">
     <div class="card-header">
       <img src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20">
-      <div class="card-title">
-        🌴✈️ Canary Islands Air Passengers Forecasting
-      </div>
+      <div class="card-title">🌴✈️ Canary Islands Air Passengers Forecasting</div>
     </div>
 
-    <!-- CONTENT -->
     <div class="card-content">
+      <p id="p1-desc"></p>
 
       <div class="project-actions">
-         <p id="p1-desc" style="padding:20px;text-align:center"></p>
         <a class="btn" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank">
           Open Dashboard
         </a>
-        <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank">
-          GitHub
+      </div>
+
+      <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/dashboard_icon.png" class="flagship-icon" alt="Dashboard icon">
+
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">Pandas</span>
+          <span class="badge badge-sql">Streamlit</span>
+          <span class="badge badge-oop">XGBoost</span>
+          <span class="badge badge-oop">LSTM</span>
+        </div>
+
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+              .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+              .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+              0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+              c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/1200x300/239a94/ffffff&text=%20">
+      <div class="card-title">🌫️🏝️ Calima Detection Dashboard</div>
+    </div>
+
+    <div class="card-content">
+      <p id="calima-desc"></p>
+
+      <div class="project-actions">
+        <a class="btn" href="https://calima-detection-dashboard-h79yijjkwtskdhzajeumeo.streamlit.app/" target="_blank">
+          Open Dashboard
         </a>
       </div>
 
-      <div style="text-align:center;margin-top:10px;">
-        <img
-            src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/dashboard_icon.png"
-            class="flagship-icon">
+      <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/calima_dashboard.png" class="flagship-icon" alt="Calima dashboard icon">
 
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">MongoDB</span>
+          <span class="badge badge-oop">Streamlit</span>
+          <span class="badge badge-oop">OpenAir</span>
+          <span class="badge badge-docker">Docker</span>
+          <span class="badge badge-oop">PyDeck</span>
+        </div>
+
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/calima-detection-dashboard" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+              .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+              .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+              0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+              c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- COMPLEX PROJECTS -->
+<h2 class="flagship-title" style="margin-top:95px;">
+  <span id="complex-text"></span>
+</h2>
+
+<!-- MICROservices -->
+<div class="microservices-wrap">
+  <div class="microservices-card">
+
+    <div class="microservices-header">
+      <h3 id="micro-title"></h3>
+      <p id="micro-desc"></p>
+
+      <div class="micro-badges">
+        <span class="badge badge-micro" id="micro-b1"></span>
+        <span class="badge badge-ml" id="micro-b2"></span>
+        <span class="badge badge-docker" id="micro-b3"></span>
+        <span class="badge badge-api" id="micro-b4"></span>
       </div>
 
-     
+      <div class="project-actions" style="padding-top:6px;">
+        <a class="btn btn-secondary" href="https://github.com/paulinap92/event-platform-ml-microservices" target="_blank">
+          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+            .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+            .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+            c0-4.42-3.58-8-8-8Z"></path>
+          </svg>
+          <span id="platform-btn-text"></span>
+        </a>
+      </div>
+    </div>
 
-      <div class="tech-badges">
-        <span class="badge badge-python">Python</span>
-        <span class="badge badge-pandas">Pandas</span>
-        <span class="badge badge-docker">Docker</span>
-        <span class="badge badge-flask">Flask</span>
-        <span class="badge badge-sql">SQL</span>
-        <span class="badge badge-oop">XGBoost</span>
-        <span class="badge badge-oop">LSTM</span>
+    <div class="microservices-subgrid">
+
+      <!-- Subcard 1 -->
+      <div class="micro-subcard">
+        <h4 id="rec-title"></h4>
+        <p id="rec-desc"></p>
+
+        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
+          <span class="badge badge-oop" id="rec-b1"></span>
+          <span class="badge badge-ci" id="rec-b2"></span>
+          <span class="badge badge-pandas" id="rec-b3"></span>
+        </div>
+
+        <div class="micro-tag">
+          <span class="pill">Experimentation</span>
+          <span class="pill">Evaluation</span>
+          <span class="pill">Production-ready</span>
+        </div>
+
+        <div class="micro-footer">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/recommendation-model-research" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Subcard 2 -->
+      <div class="micro-subcard">
+        <h4 id="sent-title"></h4>
+        <p id="sent-desc"></p>
+
+        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
+          <span class="badge badge-nlp" id="sent-b1"></span>
+          <span class="badge badge-oop" id="sent-b2"></span>
+          <span class="badge badge-ci" id="sent-b3"></span>
+        </div>
+
+        <div class="micro-tag">
+          <span class="pill">Experimentation</span>
+          <span class="pill">Evaluation</span>
+          <span class="pill">Production-ready</span>
+        </div>
+
+        <div class="micro-footer">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/sentiment-analysis-research" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Subcard 3 -->
+      <div class="micro-subcard">
+        <h4 id="evt-title"></h4>
+        <p id="evt-desc"></p>
+
+        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
+          <span class="badge badge-oop" id="evt-b1"></span>
+          <span class="badge badge-ci" id="evt-b2"></span>
+          <span class="badge badge-pandas" id="evt-b3"></span>
+        </div>
+
+        <div class="micro-tag">
+          <span class="pill">Experimentation</span>
+          <span class="pill">Evaluation</span>
+          <span class="pill">Production-ready</span>
+        </div>
+
+        <div class="micro-footer">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/event-classification-research" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            GitHub
+          </a>
+        </div>
       </div>
 
     </div>
   </div>
 </div>
-
 
 <!-- OTHER PROJECTS -->
 <h2 id="other-title" class="subsection"></h2>
@@ -344,20 +797,27 @@ function setLang(l){
 <div class="card">
   <div class="card-header">
    <img src="https://dummyimage.com/50x300/239a94/ffffff&text=%20">
-<div class="card-title">Transaction Data Report</div>
-</div>
+   <div class="card-title">Transaction Data Report</div>
+  </div>
+
   <div class="card-content">
     <p id="p2-desc"></p>
-    <div class="project-actions">
-      <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">GitHub</a>
-    </div>
-    
-    <div class="tech-badges">
-      <span class="badge badge-python">Python</span>
-      <span class="badge badge-pandas">Pandas</span>
-      <span class="badge badge-flask">Flask</span>
-      <span class="badge badge-docker">Docker</span>
-      <span class="badge badge-docker">Isolation Forest</span>
+
+    <div class="card-footer">
+      <div class="tech-badges">
+        <span class="badge badge-python">Python</span>
+        <span class="badge badge-pandas">Pandas</span>
+        <span class="badge badge-flask">Flask</span>
+        <span class="badge badge-docker">Docker</span>
+        <span class="badge badge-docker">Isolation Forest</span>
+      </div>
+
+      <div class="project-actions">
+        <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">
+          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+          GitHub
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -366,17 +826,24 @@ function setLang(l){
   <div class="card-header">
     <img src="https://dummyimage.com/50x300/4cc7c2/ffffff&text=%20">
     <div class="card-title">Travel Agency</div>
-</div>
+  </div>
+
   <div class="card-content">
     <p id="p3-desc"></p>
-    <div class="project-actions">
-    <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">GitHub</a>
-    </div>
-  
-    <div class="tech-badges">
-      <span class="badge badge-sql">SQL</span>
-      <span class="badge badge-python">Python</span>
-      <span class="badge badge-pandas">File processing</span>
+
+    <div class="card-footer">
+      <div class="tech-badges">
+        <span class="badge badge-sql">SQL</span>
+        <span class="badge badge-python">Python</span>
+        <span class="badge badge-pandas">File processing</span>
+      </div>
+
+      <div class="project-actions">
+        <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">
+          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+          GitHub
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -386,20 +853,25 @@ function setLang(l){
     <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
     <div class="card-title">Subscription Service</div>
   </div>
+
   <div class="card-content">
+    <p id="p4-desc"></p>
 
-     <p id="p4-desc"></p>
+    <div class="card-footer">
+      <div class="tech-badges">
+        <span class="badge badge-python">Python</span>
+        <span class="badge badge-oop">OOP</span>
+        <span class="badge badge-pandas">JSON</span>
+        <span class="badge badge-pandas">TXT</span>
+        <span class="badge badge-oop">Abstract Factory</span>
+      </div>
 
-    <div class="project-actions">
-      <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">GitHub</a>
-    </div>
-   
-    <div class="tech-badges">
-      <span class="badge badge-python">Python</span>
-      <span class="badge badge-oop">OOP</span>
-      <span class="badge badge-pandas">JSON</span>
-      <span class="badge badge-pandas">TXT</span>
-      <span class="badge badge-oop">Abstract Factory</span>
+      <div class="project-actions">
+        <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">
+          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+          GitHub
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -411,55 +883,36 @@ function setLang(l){
 <section class="projects">
 
   <div class="card">
-
-    <!-- NORMALNY HEADER JAK W INNYCH KARTACH -->
     <div class="card-header">
       <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
-          <!-- TYTUŁ -->
       <div class="card-title">Spark SQL Turtle Challenge</div>
     </div>
 
     <div class="card-content">
-
-      <!-- IKONA -->
-      <img
-        src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/turtle.png"
-        class="challenge-icon"
-        alt="Turtle challenge icon"
-      >
-
-  
-
-      <!-- OPIS -->
+      <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/turtle.png" class="challenge-icon" alt="Turtle challenge icon">
       <p id="turtle-desc"></p>
 
-      <!-- PRZYCISK -->
-      <div class="project-actions">
-        <a
-          class="btn"
-          href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb"
-          target="_blank"
-        >
-          Open challenge
-        </a>
-      </div>
+      <div class="card-footer">
+        <div class="project-actions">
+          <a class="btn" href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb" target="_blank">
+            Open challenge
+          </a>
+        </div>
 
-      <!-- TECHNOLOGIE -->
-      <div class="tech-badges">
-        <span class="badge badge-python">Python</span>
-        <span class="badge badge-pandas">Spark</span>
-        <span class="badge badge-oop">EDA</span>
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">Spark</span>
+          <span class="badge badge-oop">EDA</span>
+        </div>
       </div>
-
     </div>
   </div>
 
 </section>
 
-
 <h2>About me</h2>
 <div class="about-wrapper">
-  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/ppioo.bmp">
+  <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/ppioo.bmp" alt="Paulina photo">
   <div class="about" id="about-text"></div>
 </div>
 
