@@ -45,7 +45,37 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   filter:drop-shadow(0 4px 6px rgba(0,0,0,.28))
 }
 
-/* ===== FLAGSHIP GRID (2 cards side-by-side) ===== */
+/* ===== INTRO / VISION ===== */
+.portfolio-intro{
+  max-width:980px;
+  margin:40px auto 10px;
+  padding:0 20px;
+}
+
+.portfolio-box{
+  background:white;
+  border-radius:22px;
+  border:4px solid #bfefff;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  padding:28px 30px;
+  text-align:center;
+}
+
+.portfolio-box h2{
+  margin:0 0 14px;
+  font-size:2rem;
+  color:var(--blue3);
+}
+
+.portfolio-box p{
+  margin:0 auto;
+  max-width:820px;
+  font-size:1.12rem;
+  line-height:1.8;
+  color:#173f4e;
+}
+
+/* ===== FLAGSHIP GRID ===== */
 .featured-grid{
   max-width:1050px;
   margin:30px auto;
@@ -75,6 +105,12 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   display:inline-flex;
   align-items:center;
   gap:8px;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(0,0,0,.12);
 }
 
 .btn-secondary{
@@ -82,7 +118,7 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   color:#003c3c
 }
 
-/* ===== TECH BADGES (Other projects + Challenge) ===== */
+/* ===== TECH BADGES ===== */
 .tech-badges{
   margin:10px 20px;
   padding-bottom:10px;
@@ -93,11 +129,11 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   justify-content:center;
   gap:10px 10px;
 
-  min-height:92px;     /* max 8 badge => 2 rzędy */
+  min-height:92px;
   align-content:start;
 }
 
-/* ===== MICRO BADGES (Microservices + Research cards) ===== */
+/* ===== MICRO BADGES ===== */
 .micro-badges{
   margin:14px 0 0;
   padding:0;
@@ -108,12 +144,11 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   justify-content:center;
   gap:10px;
 
-  min-height:96px;        /* miejsce na 2 rzędy w subcardach */
+  min-height:96px;
   align-content:flex-start;
 }
 
-
-/* ===== PILLS (always 2 + 1) ===== */
+/* ===== PILLS ===== */
 .micro-tag{
   margin-top:12px;
 
@@ -126,13 +161,11 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   align-content:start;
 }
 
-/* 3rd pill centered on second row */
 .micro-tag .pill:last-child{
   grid-column:1 / -1;
   justify-self:center;
 }
 
-/* Pill style */
 .pill{
   padding:6px 12px;
   border-radius:999px;
@@ -182,7 +215,6 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   height:100%;
 }
 
-/* CARD HEADER WITH TITLE */
 .card-header{position:relative}
 .card-header img{width:100%;height:60px;object-fit:cover}
 
@@ -212,12 +244,10 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   flex:1;
 }
 
-/* Stała przestrzeń na opis */
 .card-content p{
   min-height:150px;
 }
 
-/* STOPKA karty – zawsze na dole */
 .card-footer{
   margin-top:auto;
   padding-top:8px;
@@ -240,7 +270,7 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   box-shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
-.about{font-size:1.17rem;line-height:1.8}
+.about{font-size:1.08rem;line-height:1.8}
 
 .contact{
   text-align:center;
@@ -281,6 +311,36 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   border:4px solid #bfefff;
   box-shadow:0 10px 25px rgba(0,0,0,.12);
   overflow:hidden;
+}
+
+.microservices-topbar-wrap{
+  position:relative;
+}
+
+.microservices-topbar{
+  width:100%;
+  height:70px;
+  object-fit:cover;
+  display:block;
+}
+
+.microservices-topbar-title{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:1.55rem;
+  font-weight:900;
+  letter-spacing:.3px;
+  text-align:center;
+  padding:0 16px;
+  background:linear-gradient(
+    to top,
+    rgba(15,45,59,.55),
+    rgba(15,45,59,.2)
+  );
 }
 
 .microservices-header{
@@ -330,7 +390,6 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   color:var(--blue3);
 }
 
-/* odstępy jak w innych kartach */
 .micro-subcard p{
   margin:0 0 10px;
   line-height:1.6;
@@ -340,14 +399,12 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
 
 .micro-badges .badge{border:1px solid #bfefff;}
 
-/* Extra badge colors */
 .badge-micro{background:#0f3f55;color:white}
 .badge-ml{background:#df7c00;color:white}
 .badge-nlp{background:#111;color:white}
 .badge-api{background:#2c88b8;color:white}
 .badge-ci{background:#4cc7c2;color:#003c3c}
 
-/* STOPKA w micro-subcard – GitHub zawsze na dole */
 .micro-footer{
   margin-top:auto;
   padding-top:10px;
@@ -355,7 +412,6 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   justify-content:center;
 }
 
-/* ===== NIEBIESKI GitHub kot (wszędzie taki sam) ===== */
 .gh-ico{
   width:18px;
   height:18px;
@@ -363,16 +419,38 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   display:inline-block;
   vertical-align:-3px;
 }
+
+@media (max-width: 760px){
+  .about-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .featured-grid{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-box{
+    padding:22px 18px;
+  }
+}
 </style>
 
 <script>
 window.onload=()=>setLang('en');
+
 const t = {
   en: {
-    projects: "Flagship Project",
+    projects: "Flagship Projects",
     other: "Other Important Projects",
     challenges: "Challenges",
-    about: "Hi! I'm Paulina — Data Scientist & AI Developer based in Spain.",
+    about_title: "About me",
+    contact_title: "Contact",
+
+    portfolio_title: "Project Vision",
+    portfolio_desc: "This portfolio is part of a larger project focused on building a data-driven travel platform based on environmental and tourism data. The goal is to create an application that helps travelers understand destinations through real data — including weather patterns, air quality (e.g. calima), seasonality, and travel trends — supporting better decision-making when planning trips.",
+
+    about: "I am a Data Scientist and AI Engineer with a background in computer vision and industrial systems. I have worked in real production environments, focusing on data analysis, system performance, and problem-solving. Over time, I shifted more strongly towards machine learning and AI, combining engineering with practical data-driven solutions.",
 
     p1: "Interactive dashboard for airline passenger analysis and forecasting, using XGBoost and LSTM models with KPIs and clear visualizations.",
     calima: "Interactive Calima monitoring dashboard for the Canary Islands: map-based view, severity levels, historical trends, and automated data updates from OpenAir.",
@@ -383,13 +461,18 @@ const t = {
 
     turtle: "Analytical SQL challenge focused on data exploration and problem solving.",
 
+    llm_section: "AI Applications in Progress",
+    traveller_desc: "In-progress travel assistant focused on the Canary Islands. The project combines Django, SQL, ChatGPT, and LangChain to build a data-driven application for trip planning, destination understanding, and interactive travel support.",
+    quiz_desc: "In-progress AI project focused on building a custom agent that combines crawling, structured data processing, and LLM-based reasoning for quiz-style or knowledge-driven interactions.",
+
     complex: "Complex Projects",
 
-    micro_title: "AI Microservices Platform",
-    micro_desc: "A microservice-based ML platform. Each track is benchmarked in research, then integrated into an independent service.",
+    micro_title: "AI-Powered Event Platform",
+    micro_banner: "AI-Powered Event Platform",
+    micro_desc: "A modular event management platform enhanced with AI components. The project combines independent services, research-driven model development, and practical system design for classification, recommendation, and sentiment-related workflows.",
 
-    micro_b1: "Microservices",
-    micro_b2: "ML Research",
+    micro_b1: "Event platform",
+    micro_b2: "ML research",
     micro_b3: "Docker",
     micro_b4: "API / REST",
 
@@ -412,13 +495,25 @@ const t = {
     evt_b1: "Classification",
     evt_b2: "MLP",
     evt_b3: "Pipeline",
+
+    traveller_card_title: "🌴 Canary AI Traveller · In Progress",
+    quiz_card_title: "🧠 Quiz Crawler Custom Agent · In Progress",
+    open_dashboard: "Open Dashboard",
+    open_challenge: "Open challenge",
+    github: "GitHub"
   },
 
   es: {
-    projects: "Proyecto principal",
+    projects: "Proyectos principales",
     other: "Otros proyectos importantes",
     challenges: "Retos",
-    about: "¡Hola! Soy Paulina — Data Scientist y Desarrolladora de IA en España.",
+    about_title: "Sobre mí",
+    contact_title: "Contacto",
+
+    portfolio_title: "Visión del proyecto",
+    portfolio_desc: "Este portfolio forma parte de un proyecto enfocado en crear una plataforma de viajes basada en datos medioambientales y turísticos. El objetivo es desarrollar una aplicación que ayude a los viajeros a entender los destinos a través de datos reales — incluyendo clima, calidad del aire (calima), estacionalidad y tendencias — para tomar mejores decisiones al planificar viajes.",
+
+    about: "Soy Data Scientist e Ingeniera de IA con experiencia en visión por computador y sistemas industriales. He trabajado en entornos de producción reales, centrándome en el análisis de datos, el rendimiento de sistemas y la resolución de problemas. Con el tiempo, me he orientado más hacia machine learning e IA, combinando ingeniería con soluciones prácticas basadas en datos.",
 
     p1: "Dashboard interactivo para el análisis y la predicción de pasajeros aéreos, utilizando modelos XGBoost y LSTM con KPIs y visualizaciones claras.",
     calima: "Dashboard interactivo para monitorizar la Calima en Canarias: mapa, niveles de severidad, tendencias históricas y actualización automática de datos desde OpenAir.",
@@ -429,12 +524,17 @@ const t = {
 
     turtle: "Reto analítico de SQL enfocado en exploración de datos y resolución de problemas.",
 
+    llm_section: "Aplicaciones de IA en progreso",
+    traveller_desc: "Asistente de viaje en desarrollo centrado en las Islas Canarias. El proyecto combina Django, SQL, ChatGPT y LangChain para construir una aplicación basada en datos para planificación de viajes, comprensión de destinos y soporte interactivo al viajero.",
+    quiz_desc: "Proyecto de IA en desarrollo centrado en crear un agente personalizado que combina crawling, procesamiento de datos estructurados y razonamiento basado en LLM para interacciones tipo quiz o aplicaciones orientadas al conocimiento.",
+
     complex: "Proyectos complejos",
 
-    micro_title: "Plataforma de microservicios con IA",
-    micro_desc: "Plataforma modular: cada línea se investiga (benchmarks) y luego se integra como microservicio.",
+    micro_title: "Plataforma de Eventos con IA",
+    micro_banner: "Plataforma de Eventos con IA",
+    micro_desc: "Una plataforma modular de gestión de eventos reforzada con componentes de IA. El proyecto combina servicios independientes, desarrollo de modelos basado en research y diseño práctico de sistemas para clasificación, recomendación y análisis de sentimiento.",
 
-    micro_b1: "Microservicios",
+    micro_b1: "Plataforma eventos",
     micro_b2: "Investigación ML",
     micro_b3: "Docker",
     micro_b4: "API / REST",
@@ -458,13 +558,25 @@ const t = {
     evt_b1: "Clasificación",
     evt_b2: "MLP",
     evt_b3: "Pipeline",
+
+    traveller_card_title: "🌴 Canary AI Traveller · En progreso",
+    quiz_card_title: "🧠 Quiz Crawler Custom Agent · En progreso",
+    open_dashboard: "Abrir dashboard",
+    open_challenge: "Abrir reto",
+    github: "GitHub"
   },
 
   pl: {
-    projects: "Projekt flagowy",
+    projects: "Projekty flagowe",
     other: "Inne ważne projekty",
     challenges: "Wyzwania",
-    about: "Cześć! Jestem Paulina — Data Scientist i AI Developer pracująca w Hiszpanii.",
+    about_title: "O mnie",
+    contact_title: "Kontakt",
+
+    portfolio_title: "Wizja projektu",
+    portfolio_desc: "To portfolio jest częścią większego projektu, którego celem jest stworzenie platformy podróżniczej opartej na danych środowiskowych i turystycznych. Celem jest budowa aplikacji, która pomaga zrozumieć miejsca na podstawie danych — takich jak pogoda, jakość powietrza (np. kalima), sezonowość i trendy — i wspiera lepsze decyzje podróżnicze.",
+
+    about: "Jestem Data Scientist i AI Engineer z doświadczeniem w computer vision oraz systemach przemysłowych. Pracowałam w rzeczywistych środowiskach produkcyjnych, skupiając się na analizie danych, wydajności systemów i rozwiązywaniu problemów. Z czasem coraz mocniej skierowałam się w stronę machine learningu i AI, łącząc inżynierię z praktycznymi rozwiązaniami data-driven.",
 
     p1: "Interaktywny dashboard do analizy i prognozowania liczby pasażerów linii lotniczych, wykorzystujący modele XGBoost i LSTM oraz czytelne wizualizacje KPI.",
     calima: "Interaktywny dashboard do monitorowania kalimy na Wyspach Kanaryjskich: mapa, poziomy nasilenia, trendy historyczne oraz automatyczne aktualizacje danych ze źródeł OpenAir.",
@@ -475,12 +587,17 @@ const t = {
 
     turtle: "Analityczne wyzwanie SQL skupione na eksploracji danych i rozwiązywaniu problemów.",
 
+    llm_section: "Aplikacje AI w budowie",
+    traveller_desc: "Projekt w trakcie tworzenia, skupiony na asystencie podróży dla Wysp Kanaryjskich. Łączy Django, SQL, ChatGPT i LangChain w celu budowy aplikacji data-driven do planowania podróży, poznawania kierunków i interaktywnego wsparcia podróżnika.",
+    quiz_desc: "Projekt AI w trakcie tworzenia, skupiony na budowie własnego agenta łączącego crawling, przetwarzanie danych strukturalnych oraz rozumowanie oparte na LLM do interakcji typu quiz i zastosowań opartych na wiedzy.",
+
     complex: "Złożone projekty",
 
-    micro_title: "Platforma mikroserwisowa z ML",
-    micro_desc: "Platforma oparta o mikroserwisy: każdy track ma research/benchmark i potem jest integrowany jako osobny serwis.",
+    micro_title: "Platforma Eventowa z AI",
+    micro_banner: "Platforma Eventowa z AI",
+    micro_desc: "Modułowa platforma do zarządzania wydarzeniami wzbogacona o komponenty AI. Projekt łączy niezależne serwisy, research modeli oraz praktyczne podejście do budowy systemów wspierających klasyfikację, rekomendacje i analizę sentymentu.",
 
-    micro_b1: "Mikroserwisy",
+    micro_b1: "Platforma eventowa",
     micro_b2: "Research ML",
     micro_b3: "Docker",
     micro_b4: "API / REST",
@@ -504,53 +621,80 @@ const t = {
     evt_b1: "Klasyfikacja",
     evt_b2: "MLP",
     evt_b3: "Pipeline",
+
+    traveller_card_title: "🌴 Canary AI Traveller · W trakcie",
+    quiz_card_title: "🧠 Quiz Crawler Custom Agent · W trakcie",
+    open_dashboard: "Otwórz dashboard",
+    open_challenge: "Otwórz wyzwanie",
+    github: "GitHub"
   }
 };
 
 function setLang(l){
- document.getElementById("projects-text").textContent=t[l].projects;
- document.getElementById("other-title").textContent=t[l].other;
- document.getElementById("challenge-title").textContent=t[l].challenges;
- document.getElementById("about-text").textContent=t[l].about;
- document.getElementById("p1-desc").textContent=t[l].p1;
- document.getElementById("calima-desc").textContent=t[l].calima;
- document.getElementById("p2-desc").textContent=t[l].p2;
- document.getElementById("p3-desc").textContent=t[l].p3;
- document.getElementById("p4-desc").textContent=t[l].p4;
- document.getElementById("turtle-desc").textContent=t[l].turtle;
+  document.getElementById("projects-text").textContent=t[l].projects;
+  document.getElementById("other-title").textContent=t[l].other;
+  document.getElementById("challenge-title").textContent=t[l].challenges;
+  document.getElementById("about-text").textContent=t[l].about;
+  document.getElementById("about-title").textContent=t[l].about_title;
+  document.getElementById("contact-title").textContent=t[l].contact_title;
 
- document.getElementById("complex-text").textContent=t[l].complex;
+  document.getElementById("portfolio-title").textContent=t[l].portfolio_title;
+  document.getElementById("portfolio-desc").textContent=t[l].portfolio_desc;
 
- document.getElementById("micro-title").textContent=t[l].micro_title;
- document.getElementById("micro-desc").textContent=t[l].micro_desc;
+  document.getElementById("p1-desc").textContent=t[l].p1;
+  document.getElementById("calima-desc").textContent=t[l].calima;
+  document.getElementById("p2-desc").textContent=t[l].p2;
+  document.getElementById("p3-desc").textContent=t[l].p3;
+  document.getElementById("p4-desc").textContent=t[l].p4;
+  document.getElementById("turtle-desc").textContent=t[l].turtle;
 
- document.getElementById("micro-b1").textContent=t[l].micro_b1;
- document.getElementById("micro-b2").textContent=t[l].micro_b2;
- document.getElementById("micro-b3").textContent=t[l].micro_b3;
- document.getElementById("micro-b4").textContent=t[l].micro_b4;
+  document.getElementById("llm-section-title").textContent=t[l].llm_section;
+  document.getElementById("traveller-desc").textContent=t[l].traveller_desc;
+  document.getElementById("quiz-desc").textContent=t[l].quiz_desc;
+  document.getElementById("traveller-card-title").textContent=t[l].traveller_card_title;
+  document.getElementById("quiz-card-title").textContent=t[l].quiz_card_title;
 
- document.getElementById("platform-btn-text").textContent=t[l].platform_btn;
+  document.getElementById("complex-text").textContent=t[l].complex;
 
- document.getElementById("rec-title").textContent=t[l].rec_title;
- document.getElementById("rec-desc").textContent=t[l].rec_desc;
+  document.getElementById("micro-title").textContent=t[l].micro_title;
+  document.getElementById("micro-banner-text").textContent=t[l].micro_banner;
+  document.getElementById("micro-desc").textContent=t[l].micro_desc;
 
- document.getElementById("sent-title").textContent=t[l].sent_title;
- document.getElementById("sent-desc").textContent=t[l].sent_desc;
+  document.getElementById("micro-b1").textContent=t[l].micro_b1;
+  document.getElementById("micro-b2").textContent=t[l].micro_b2;
+  document.getElementById("micro-b3").textContent=t[l].micro_b3;
+  document.getElementById("micro-b4").textContent=t[l].micro_b4;
 
- document.getElementById("evt-title").textContent=t[l].evt_title;
- document.getElementById("evt-desc").textContent=t[l].evt_desc;
+  document.getElementById("platform-btn-text").textContent=t[l].platform_btn;
 
- document.getElementById("rec-b1").textContent=t[l].rec_b1;
- document.getElementById("rec-b2").textContent=t[l].rec_b2;
- document.getElementById("rec-b3").textContent=t[l].rec_b3;
+  document.getElementById("rec-title").textContent=t[l].rec_title;
+  document.getElementById("rec-desc").textContent=t[l].rec_desc;
 
- document.getElementById("sent-b1").textContent=t[l].sent_b1;
- document.getElementById("sent-b2").textContent=t[l].sent_b2;
- document.getElementById("sent-b3").textContent=t[l].sent_b3;
+  document.getElementById("sent-title").textContent=t[l].sent_title;
+  document.getElementById("sent-desc").textContent=t[l].sent_desc;
 
- document.getElementById("evt-b1").textContent=t[l].evt_b1;
- document.getElementById("evt-b2").textContent=t[l].evt_b2;
- document.getElementById("evt-b3").textContent=t[l].evt_b3;
+  document.getElementById("evt-title").textContent=t[l].evt_title;
+  document.getElementById("evt-desc").textContent=t[l].evt_desc;
+
+  document.getElementById("rec-b1").textContent=t[l].rec_b1;
+  document.getElementById("rec-b2").textContent=t[l].rec_b2;
+  document.getElementById("rec-b3").textContent=t[l].rec_b3;
+
+  document.getElementById("sent-b1").textContent=t[l].sent_b1;
+  document.getElementById("sent-b2").textContent=t[l].sent_b2;
+  document.getElementById("sent-b3").textContent=t[l].sent_b3;
+
+  document.getElementById("evt-b1").textContent=t[l].evt_b1;
+  document.getElementById("evt-b2").textContent=t[l].evt_b2;
+  document.getElementById("evt-b3").textContent=t[l].evt_b3;
+
+  document.getElementById("open-dashboard-1").textContent=t[l].open_dashboard;
+  document.getElementById("open-dashboard-2").textContent=t[l].open_dashboard;
+  document.getElementById("open-challenge-btn").textContent=t[l].open_challenge;
+
+  document.querySelectorAll(".github-text").forEach(el => {
+    el.textContent = t[l].github;
+  });
 }
 </script>
 </head>
@@ -566,18 +710,23 @@ function setLang(l){
   </div>
 </header>
 
+<section class="portfolio-intro">
+  <div class="portfolio-box">
+    <h2 id="portfolio-title"></h2>
+    <p id="portfolio-desc"></p>
+  </div>
+</section>
+
 <h2 class="flagship-title">
   <span id="projects-text"></span>
   <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/canary-turtle.png" class="flagship-turtle" alt="Turtle icon">
 </h2>
 
-<!-- FLAGSHIP -->
 <div class="featured-grid">
 
-  <!-- CARD 1 -->
   <div class="card">
     <div class="card-header">
-      <img src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20">
+      <img src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20" alt="">
       <div class="card-title">🌴✈️ Canary Islands Air Passengers Forecasting</div>
     </div>
 
@@ -586,7 +735,7 @@ function setLang(l){
 
       <div class="project-actions">
         <a class="btn" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank">
-          Open Dashboard
+          <span id="open-dashboard-1"></span>
         </a>
       </div>
 
@@ -614,17 +763,16 @@ function setLang(l){
               0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
               c0-4.42-3.58-8-8-8Z"></path>
             </svg>
-            GitHub
+            <span class="github-text">GitHub</span>
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CARD 2 -->
   <div class="card">
     <div class="card-header">
-      <img src="https://dummyimage.com/1200x300/239a94/ffffff&text=%20">
+      <img src="https://dummyimage.com/1200x300/239a94/ffffff&text=%20" alt="">
       <div class="card-title">🌫️🏝️ Calima Detection Dashboard</div>
     </div>
 
@@ -633,7 +781,7 @@ function setLang(l){
 
       <div class="project-actions">
         <a class="btn" href="https://calima-detection-dashboard.onrender.com/" target="_blank">
-          Open Dashboard
+          <span id="open-dashboard-2"></span>
         </a>
       </div>
 
@@ -662,7 +810,7 @@ function setLang(l){
               0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
               c0-4.42-3.58-8-8-8Z"></path>
             </svg>
-            GitHub
+            <span class="github-text">GitHub</span>
           </a>
         </div>
       </div>
@@ -671,14 +819,100 @@ function setLang(l){
 
 </div>
 
-<!-- COMPLEX PROJECTS -->
+<h2 id="llm-section-title" class="subsection"></h2>
+<section class="projects">
+
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/1200x300/4cc7c2/ffffff&text=%20" alt="">
+      <div class="card-title" id="traveller-card-title"></div>
+    </div>
+
+    <div class="card-content">
+      <p id="traveller-desc"></p>
+
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Django</span>
+          <span class="badge badge-sql">SQL</span>
+          <span class="badge badge-oop">ChatGPT</span>
+          <span class="badge badge-pandas">LangChain</span>
+        </div>
+
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-traveller-AI-agent" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+              .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+              .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+              0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+              c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+            <span class="github-text">GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/1200x300/239a94/ffffff&text=%20" alt="">
+      <div class="card-title" id="quiz-card-title"></div>
+    </div>
+
+    <div class="card-content">
+      <p id="quiz-desc"></p>
+
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">Crawler</span>
+          <span class="badge badge-oop">Custom Agent</span>
+          <span class="badge badge-docker">LLM</span>
+        </div>
+
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+              -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+              .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+              -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+              .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+              .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+              0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
+              c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+            <span class="github-text">GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 <h2 class="flagship-title" style="margin-top:95px;">
   <span id="complex-text"></span>
 </h2>
 
-<!-- MICROservices -->
 <div class="microservices-wrap">
   <div class="microservices-card">
+
+    <div class="microservices-topbar-wrap">
+      <img
+        class="microservices-topbar"
+        src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20"
+        alt="Event platform banner"
+      >
+      <div class="microservices-topbar-title" id="micro-banner-text"></div>
+    </div>
 
     <div class="microservices-header">
       <h3 id="micro-title"></h3>
@@ -711,7 +945,6 @@ function setLang(l){
 
     <div class="microservices-subgrid">
 
-      <!-- Subcard 1 -->
       <div class="micro-subcard">
         <h4 id="rec-title"></h4>
         <p id="rec-desc"></p>
@@ -731,12 +964,11 @@ function setLang(l){
         <div class="micro-footer">
           <a class="btn btn-secondary" href="https://github.com/paulinap92/recommendation-model-research" target="_blank">
             <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            GitHub
+            <span class="github-text">GitHub</span>
           </a>
         </div>
       </div>
 
-      <!-- Subcard 2 -->
       <div class="micro-subcard">
         <h4 id="sent-title"></h4>
         <p id="sent-desc"></p>
@@ -756,12 +988,11 @@ function setLang(l){
         <div class="micro-footer">
           <a class="btn btn-secondary" href="https://github.com/paulinap92/sentiment-analysis-research" target="_blank">
             <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            GitHub
+            <span class="github-text">GitHub</span>
           </a>
         </div>
       </div>
 
-      <!-- Subcard 3 -->
       <div class="micro-subcard">
         <h4 id="evt-title"></h4>
         <p id="evt-desc"></p>
@@ -781,7 +1012,7 @@ function setLang(l){
         <div class="micro-footer">
           <a class="btn btn-secondary" href="https://github.com/paulinap92/event-classification-research" target="_blank">
             <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            GitHub
+            <span class="github-text">GitHub</span>
           </a>
         </div>
       </div>
@@ -790,101 +1021,99 @@ function setLang(l){
   </div>
 </div>
 
-<!-- OTHER PROJECTS -->
 <h2 id="other-title" class="subsection"></h2>
 <section class="projects">
 
-<div class="card">
-  <div class="card-header">
-   <img src="https://dummyimage.com/50x300/239a94/ffffff&text=%20">
-   <div class="card-title">Transaction Data Report</div>
-  </div>
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/50x300/239a94/ffffff&text=%20" alt="">
+      <div class="card-title">Transaction Data Report</div>
+    </div>
 
-  <div class="card-content">
-    <p id="p2-desc"></p>
+    <div class="card-content">
+      <p id="p2-desc"></p>
 
-    <div class="card-footer">
-      <div class="tech-badges">
-        <span class="badge badge-python">Python</span>
-        <span class="badge badge-pandas">Pandas</span>
-        <span class="badge badge-flask">Flask</span>
-        <span class="badge badge-docker">Docker</span>
-        <span class="badge badge-docker">Isolation Forest</span>
-      </div>
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">Pandas</span>
+          <span class="badge badge-flask">Flask</span>
+          <span class="badge badge-docker">Docker</span>
+          <span class="badge badge-docker">Isolation Forest</span>
+        </div>
 
-      <div class="project-actions">
-        <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">
-          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-          GitHub
-        </a>
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            <span class="github-text">GitHub</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="card-header">
-    <img src="https://dummyimage.com/50x300/4cc7c2/ffffff&text=%20">
-    <div class="card-title">Travel Agency</div>
-  </div>
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/50x300/4cc7c2/ffffff&text=%20" alt="">
+      <div class="card-title">Travel Agency</div>
+    </div>
 
-  <div class="card-content">
-    <p id="p3-desc"></p>
+    <div class="card-content">
+      <p id="p3-desc"></p>
 
-    <div class="card-footer">
-      <div class="tech-badges">
-        <span class="badge badge-sql">SQL</span>
-        <span class="badge badge-python">Python</span>
-        <span class="badge badge-pandas">File processing</span>
-      </div>
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-sql">SQL</span>
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-pandas">File processing</span>
+        </div>
 
-      <div class="project-actions">
-        <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">
-          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-          GitHub
-        </a>
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            <span class="github-text">GitHub</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="card-header">
-    <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
-    <div class="card-title">Subscription Service</div>
-  </div>
+  <div class="card">
+    <div class="card-header">
+      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20" alt="">
+      <div class="card-title">Subscription Service</div>
+    </div>
 
-  <div class="card-content">
-    <p id="p4-desc"></p>
+    <div class="card-content">
+      <p id="p4-desc"></p>
 
-    <div class="card-footer">
-      <div class="tech-badges">
-        <span class="badge badge-python">Python</span>
-        <span class="badge badge-oop">OOP</span>
-        <span class="badge badge-pandas">JSON</span>
-        <span class="badge badge-pandas">TXT</span>
-        <span class="badge badge-oop">Abstract Factory</span>
-      </div>
+      <div class="card-footer">
+        <div class="tech-badges">
+          <span class="badge badge-python">Python</span>
+          <span class="badge badge-oop">OOP</span>
+          <span class="badge badge-pandas">JSON</span>
+          <span class="badge badge-pandas">TXT</span>
+          <span class="badge badge-oop">Abstract Factory</span>
+        </div>
 
-      <div class="project-actions">
-        <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">
-          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-          GitHub
-        </a>
+        <div class="project-actions">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">
+            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+            <span class="github-text">GitHub</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </section>
 
-<!-- CHALLENGES -->
 <h2 id="challenge-title" class="subsection"></h2>
 <section class="projects">
 
   <div class="card">
     <div class="card-header">
-      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20">
+      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20" alt="">
       <div class="card-title">Spark SQL Turtle Challenge</div>
     </div>
 
@@ -895,7 +1124,7 @@ function setLang(l){
       <div class="card-footer">
         <div class="project-actions">
           <a class="btn" href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb" target="_blank">
-            Open challenge
+            <span id="open-challenge-btn"></span>
           </a>
         </div>
 
@@ -910,15 +1139,15 @@ function setLang(l){
 
 </section>
 
-<h2>About me</h2>
+<h2 id="about-title"></h2>
 <div class="about-wrapper">
   <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/ppioo.bmp" alt="Paulina photo">
   <div class="about" id="about-text"></div>
 </div>
 
-<h2>Contact</h2>
+<h2 id="contact-title"></h2>
 <div class="contact">
-  <a href="paulina.piotrowska.p@gmail.com">📧 Email</a> ·
+  <a href="mailto:paulina.piotrowska.p@gmail.com">📧 Email</a> ·
   <a href="https://github.com/paulinap92" target="_blank">💻 GitHub</a> ·
   <a href="https://www.linkedin.com/in/paulina-piotrowska-859b17122/" target="_blank">🌐 LinkedIn</a>
 </div>
