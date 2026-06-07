@@ -420,6 +420,84 @@ h2{text-align:center;font-size:2.3rem;font-weight:800;color:var(--blue3);margin-
   vertical-align:-3px;
 }
 
+
+/* ===== COMPACT COURSE PROJECTS ===== */
+.course-projects-wrap{
+  max-width:1050px;
+  margin:70px auto 0;
+  padding:0 20px;
+}
+
+.course-projects-box{
+  background:white;
+  border-radius:22px;
+  border:4px solid #bfefff;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  padding:26px 28px;
+}
+
+.course-projects-box h2{
+  margin:0 0 10px;
+  font-size:2rem;
+  color:var(--blue3);
+}
+
+.course-projects-box > p{
+  max-width:820px;
+  margin:0 auto 22px;
+  text-align:center;
+  font-size:1.05rem;
+  line-height:1.7;
+  color:#173f4e;
+}
+
+.course-menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+}
+
+.course-item{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  background:linear-gradient(180deg, rgba(233,246,255,.65), white);
+  border:2px solid #bfefff;
+  border-radius:16px;
+  padding:15px;
+  text-decoration:none;
+  color:#0f2d3b;
+  transition:.2s ease;
+}
+
+.course-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(0,0,0,.1);
+}
+
+.course-item strong{
+  color:var(--blue3);
+  font-size:1.02rem;
+}
+
+.course-item span{
+  font-size:.92rem;
+  line-height:1.45;
+  color:#173f4e;
+}
+
+.course-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:auto;
+}
+
+.course-tags .pill{
+  font-size:.7rem;
+  padding:4px 9px;
+}
+
 @media (max-width: 760px){
   .about-wrapper{
     flex-direction:column;
@@ -444,6 +522,13 @@ const t = {
     projects: "Flagship Projects",
     other: "Other Important Projects",
     challenges: "Challenges",
+    course_title: "Course and Learning Projects",
+    course_desc: "Smaller projects completed during courses, practice challenges, or technical exercises. They are kept here as supporting evidence of continuous learning, but the main portfolio focus remains on data science, AI applications, dashboards, and automation-oriented projects.",
+    course_platform_desc: "Modular event platform with AI/ML components: recommendation, sentiment analysis, and event classification experiments.",
+    course_transaction_desc: "Python reporting project for CSV processing, data cleaning, anomaly detection, and automated summaries.",
+    course_travel_desc: "SQL and Python exercise for processing travel agency data from files and queries.",
+    course_subscription_desc: "OOP practice project using Abstract Factory with TXT and JSON data formats.",
+    course_turtle_desc: "Spark SQL analytical challenge focused on data exploration and problem solving.",
     about_title: "About me",
     contact_title: "Contact",
 
@@ -463,7 +548,7 @@ const t = {
 
     llm_section: "AI Applications in Progress",
     traveller_desc: "In-progress travel assistant focused on the Canary Islands. The project combines Django, SQL, ChatGPT, and LangChain to build a data-driven application for trip planning, destination understanding, and interactive travel support.",
-    quiz_desc: "In-progress AI project focused on building a custom agent that combines crawling, structured data processing, and LLM-based reasoning for quiz-style or knowledge-driven interactions.",
+    quiz_desc: "Desktop AI language-learning application that generates vocabulary flashcards, supports conversation practice, and exports selected cards directly to Anki. It integrates Gemini and ChatGPT providers with a modular Python architecture.",
 
     complex: "Complex Projects",
 
@@ -497,7 +582,7 @@ const t = {
     evt_b3: "Pipeline",
 
     traveller_card_title: "🌴 Canary AI Traveller · In Progress",
-    quiz_card_title: "🧠 Quiz Crawler Custom Agent · In Progress",
+    quiz_card_title: "🧠 AI Anki Vocabulary & Conversation App",
     open_dashboard: "Open Dashboard",
     open_challenge: "Open challenge",
     github: "GitHub"
@@ -507,6 +592,13 @@ const t = {
     projects: "Proyectos principales",
     other: "Otros proyectos importantes",
     challenges: "Retos",
+    course_title: "Proyectos de curso y aprendizaje",
+    course_desc: "Proyectos más pequeños realizados durante cursos, retos prácticos o ejercicios técnicos. Los mantengo como apoyo al aprendizaje continuo, pero el foco principal del portfolio está en data science, aplicaciones de IA, dashboards y automatización.",
+    course_platform_desc: "Plataforma modular de eventos con componentes AI/ML: recomendación, análisis de sentimiento y experimentos de clasificación de eventos.",
+    course_transaction_desc: "Proyecto de reporting en Python para procesar CSV, limpiar datos, detectar anomalías y generar resúmenes automáticos.",
+    course_travel_desc: "Ejercicio de SQL y Python para procesar datos de una agencia de viajes desde archivos y consultas.",
+    course_subscription_desc: "Proyecto de práctica OOP usando Abstract Factory con formatos TXT y JSON.",
+    course_turtle_desc: "Reto analítico con Spark SQL centrado en exploración de datos y resolución de problemas.",
     about_title: "Sobre mí",
     contact_title: "Contacto",
 
@@ -526,7 +618,7 @@ const t = {
 
     llm_section: "Aplicaciones de IA en progreso",
     traveller_desc: "Asistente de viaje en desarrollo centrado en las Islas Canarias. El proyecto combina Django, SQL, ChatGPT y LangChain para construir una aplicación basada en datos para planificación de viajes, comprensión de destinos y soporte interactivo al viajero.",
-    quiz_desc: "Proyecto de IA en desarrollo centrado en crear un agente personalizado que combina crawling, procesamiento de datos estructurados y razonamiento basado en LLM para interacciones tipo quiz o aplicaciones orientadas al conocimiento.",
+    quiz_desc: "Aplicación de escritorio para aprender idiomas con IA: genera tarjetas de vocabulario, permite practicar conversaciones y exporta las tarjetas seleccionadas directamente a Anki. Integra Gemini y ChatGPT con una arquitectura modular en Python.",
 
     complex: "Proyectos complejos",
 
@@ -560,7 +652,7 @@ const t = {
     evt_b3: "Pipeline",
 
     traveller_card_title: "🌴 Canary AI Traveller · En progreso",
-    quiz_card_title: "🧠 Quiz Crawler Custom Agent · En progreso",
+    quiz_card_title: "🧠 AI Anki · Vocabulario y conversación",
     open_dashboard: "Abrir dashboard",
     open_challenge: "Abrir reto",
     github: "GitHub"
@@ -570,6 +662,13 @@ const t = {
     projects: "Projekty flagowe",
     other: "Inne ważne projekty",
     challenges: "Wyzwania",
+    course_title: "Projekty kursowe i ćwiczeniowe",
+    course_desc: "Mniejsze projekty z kursów, ćwiczeń technicznych i wyzwań. Zostają jako dodatkowy dowód systematycznej nauki, ale główny nacisk portfolio pozostaje na data science, aplikacjach AI, dashboardach i automatyzacji.",
+    course_platform_desc: "Modułowa platforma eventowa z komponentami AI/ML: rekomendacje, analiza sentymentu i eksperymenty klasyfikacji eventów.",
+    course_transaction_desc: "Projekt raportowy w Pythonie: przetwarzanie CSV, czyszczenie danych, wykrywanie anomalii i automatyczne podsumowania.",
+    course_travel_desc: "Ćwiczenie SQL i Python do przetwarzania danych biura podróży z plików i zapytań.",
+    course_subscription_desc: "Projekt ćwiczeniowy OOP z użyciem Abstract Factory oraz formatów TXT i JSON.",
+    course_turtle_desc: "Wyzwanie analityczne Spark SQL skupione na eksploracji danych i rozwiązywaniu problemów.",
     about_title: "O mnie",
     contact_title: "Kontakt",
 
@@ -589,7 +688,7 @@ const t = {
 
     llm_section: "Aplikacje AI w budowie",
     traveller_desc: "Projekt w trakcie tworzenia, skupiony na asystencie podróży dla Wysp Kanaryjskich. Łączy Django, SQL, ChatGPT i LangChain w celu budowy aplikacji data-driven do planowania podróży, poznawania kierunków i interaktywnego wsparcia podróżnika.",
-    quiz_desc: "Projekt AI w trakcie tworzenia, skupiony na budowie własnego agenta łączącego crawling, przetwarzanie danych strukturalnych oraz rozumowanie oparte na LLM do interakcji typu quiz i zastosowań opartych na wiedzy.",
+    quiz_desc: "Desktopowa aplikacja AI do nauki języków: generuje fiszki, umożliwia ćwiczenie konwersacji i eksportuje wybrane karty bezpośrednio do Anki. Integruje Gemini i ChatGPT w modularnej architekturze Pythona.",
 
     complex: "Złożone projekty",
 
@@ -623,7 +722,7 @@ const t = {
     evt_b3: "Pipeline",
 
     traveller_card_title: "🌴 Canary AI Traveller · W trakcie",
-    quiz_card_title: "🧠 Quiz Crawler Custom Agent · W trakcie",
+    quiz_card_title: "🧠 AI Anki · Fiszki i konwersacje",
     open_dashboard: "Otwórz dashboard",
     open_challenge: "Otwórz wyzwanie",
     github: "GitHub"
@@ -631,66 +730,70 @@ const t = {
 };
 
 function setLang(l){
-  document.getElementById("projects-text").textContent=t[l].projects;
-  document.getElementById("other-title").textContent=t[l].other;
-  document.getElementById("challenge-title").textContent=t[l].challenges;
-  document.getElementById("about-text").textContent=t[l].about;
-  document.getElementById("about-title").textContent=t[l].about_title;
-  document.getElementById("contact-title").textContent=t[l].contact_title;
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
 
-  document.getElementById("portfolio-title").textContent=t[l].portfolio_title;
-  document.getElementById("portfolio-desc").textContent=t[l].portfolio_desc;
+  set("projects-text", t[l].projects);
+  set("other-title", t[l].other);
+  set("challenge-title", t[l].challenges);
+  set("about-text", t[l].about);
+  set("about-title", t[l].about_title);
+  set("contact-title", t[l].contact_title);
 
-  document.getElementById("p1-desc").textContent=t[l].p1;
-  document.getElementById("calima-desc").textContent=t[l].calima;
-  document.getElementById("p2-desc").textContent=t[l].p2;
-  document.getElementById("p3-desc").textContent=t[l].p3;
-  document.getElementById("p4-desc").textContent=t[l].p4;
-  document.getElementById("turtle-desc").textContent=t[l].turtle;
+  set("portfolio-title", t[l].portfolio_title);
+  set("portfolio-desc", t[l].portfolio_desc);
 
-  document.getElementById("llm-section-title").textContent=t[l].llm_section;
-  document.getElementById("traveller-desc").textContent=t[l].traveller_desc;
-  document.getElementById("quiz-desc").textContent=t[l].quiz_desc;
-  document.getElementById("traveller-card-title").textContent=t[l].traveller_card_title;
-  document.getElementById("quiz-card-title").textContent=t[l].quiz_card_title;
+  set("p1-desc", t[l].p1);
+  set("calima-desc", t[l].calima);
+  set("p2-desc", t[l].p2);
+  set("p3-desc", t[l].p3);
+  set("p4-desc", t[l].p4);
+  set("turtle-desc", t[l].turtle);
 
-  document.getElementById("complex-text").textContent=t[l].complex;
+  set("llm-section-title", t[l].llm_section);
+  set("traveller-desc", t[l].traveller_desc);
+  set("quiz-desc", t[l].quiz_desc);
+  set("traveller-card-title", t[l].traveller_card_title);
+  set("quiz-card-title", t[l].quiz_card_title);
 
-  document.getElementById("micro-title").textContent=t[l].micro_title;
-  document.getElementById("micro-banner-text").textContent=t[l].micro_banner;
-  document.getElementById("micro-desc").textContent=t[l].micro_desc;
+  set("complex-text", t[l].complex);
+  set("micro-title", t[l].micro_title);
+  set("micro-banner-text", t[l].micro_banner);
+  set("micro-desc", t[l].micro_desc);
+  set("micro-b1", t[l].micro_b1);
+  set("micro-b2", t[l].micro_b2);
+  set("micro-b3", t[l].micro_b3);
+  set("micro-b4", t[l].micro_b4);
+  set("platform-btn-text", t[l].platform_btn);
+  set("rec-title", t[l].rec_title);
+  set("rec-desc", t[l].rec_desc);
+  set("sent-title", t[l].sent_title);
+  set("sent-desc", t[l].sent_desc);
+  set("evt-title", t[l].evt_title);
+  set("evt-desc", t[l].evt_desc);
+  set("rec-b1", t[l].rec_b1);
+  set("rec-b2", t[l].rec_b2);
+  set("rec-b3", t[l].rec_b3);
+  set("sent-b1", t[l].sent_b1);
+  set("sent-b2", t[l].sent_b2);
+  set("sent-b3", t[l].sent_b3);
+  set("evt-b1", t[l].evt_b1);
+  set("evt-b2", t[l].evt_b2);
+  set("evt-b3", t[l].evt_b3);
 
-  document.getElementById("micro-b1").textContent=t[l].micro_b1;
-  document.getElementById("micro-b2").textContent=t[l].micro_b2;
-  document.getElementById("micro-b3").textContent=t[l].micro_b3;
-  document.getElementById("micro-b4").textContent=t[l].micro_b4;
+  set("course-title", t[l].course_title);
+  set("course-desc", t[l].course_desc);
+  set("course-platform-desc", t[l].course_platform_desc);
+  set("course-transaction-desc", t[l].course_transaction_desc);
+  set("course-travel-desc", t[l].course_travel_desc);
+  set("course-subscription-desc", t[l].course_subscription_desc);
+  set("course-turtle-desc", t[l].course_turtle_desc);
 
-  document.getElementById("platform-btn-text").textContent=t[l].platform_btn;
-
-  document.getElementById("rec-title").textContent=t[l].rec_title;
-  document.getElementById("rec-desc").textContent=t[l].rec_desc;
-
-  document.getElementById("sent-title").textContent=t[l].sent_title;
-  document.getElementById("sent-desc").textContent=t[l].sent_desc;
-
-  document.getElementById("evt-title").textContent=t[l].evt_title;
-  document.getElementById("evt-desc").textContent=t[l].evt_desc;
-
-  document.getElementById("rec-b1").textContent=t[l].rec_b1;
-  document.getElementById("rec-b2").textContent=t[l].rec_b2;
-  document.getElementById("rec-b3").textContent=t[l].rec_b3;
-
-  document.getElementById("sent-b1").textContent=t[l].sent_b1;
-  document.getElementById("sent-b2").textContent=t[l].sent_b2;
-  document.getElementById("sent-b3").textContent=t[l].sent_b3;
-
-  document.getElementById("evt-b1").textContent=t[l].evt_b1;
-  document.getElementById("evt-b2").textContent=t[l].evt_b2;
-  document.getElementById("evt-b3").textContent=t[l].evt_b3;
-
-  document.getElementById("open-dashboard-1").textContent=t[l].open_dashboard;
-  document.getElementById("open-dashboard-2").textContent=t[l].open_dashboard;
-  document.getElementById("open-challenge-btn").textContent=t[l].open_challenge;
+  set("open-dashboard-1", t[l].open_dashboard);
+  set("open-dashboard-2", t[l].open_dashboard);
+  set("open-challenge-btn", t[l].open_challenge);
 
   document.querySelectorAll(".github-text").forEach(el => {
     el.textContent = t[l].github;
@@ -840,7 +943,7 @@ function setLang(l){
         </div>
 
         <div class="project-actions">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-traveller-AI-agent" target="_blank">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/canary-ai-travel-planner" target="_blank">
             <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
               0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
@@ -871,13 +974,13 @@ function setLang(l){
       <div class="card-footer">
         <div class="tech-badges">
           <span class="badge badge-python">Python</span>
-          <span class="badge badge-pandas">Crawler</span>
-          <span class="badge badge-oop">Custom Agent</span>
-          <span class="badge badge-docker">LLM</span>
+          <span class="badge badge-pandas">AnkiConnect</span>
+          <span class="badge badge-oop">Gemini / ChatGPT</span>
+          <span class="badge badge-docker">Tkinter</span>
         </div>
 
         <div class="project-actions">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92" target="_blank">
+          <a class="btn btn-secondary" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank">
             <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
               0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
@@ -898,245 +1001,63 @@ function setLang(l){
 
 </section>
 
-<h2 class="flagship-title" style="margin-top:95px;">
-  <span id="complex-text"></span>
-</h2>
+<section class="course-projects-wrap">
+  <div class="course-projects-box">
+    <h2 id="course-title"></h2>
+    <p id="course-desc"></p>
 
-<div class="microservices-wrap">
-  <div class="microservices-card">
-
-    <div class="microservices-topbar-wrap">
-      <img
-        class="microservices-topbar"
-        src="https://dummyimage.com/1200x300/2c88b8/ffffff&text=%20"
-        alt="Event platform banner"
-      >
-      <div class="microservices-topbar-title" id="micro-banner-text"></div>
-    </div>
-
-    <div class="microservices-header">
-      <h3 id="micro-title"></h3>
-      <p id="micro-desc"></p>
-
-      <div class="micro-badges">
-        <span class="badge badge-micro" id="micro-b1"></span>
-        <span class="badge badge-ml" id="micro-b2"></span>
-        <span class="badge badge-docker" id="micro-b3"></span>
-        <span class="badge badge-api" id="micro-b4"></span>
-      </div>
-
-      <div class="project-actions" style="padding-top:6px;">
-        <a class="btn btn-secondary" href="https://github.com/paulinap92/event-platform-ml-microservices" target="_blank">
-          <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
-            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
-            .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
-            .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
-            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
-            c0-4.42-3.58-8-8-8Z"></path>
-          </svg>
-          <span id="platform-btn-text"></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="microservices-subgrid">
-
-      <div class="micro-subcard">
-        <h4 id="rec-title"></h4>
-        <p id="rec-desc"></p>
-
-        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
-          <span class="badge badge-oop" id="rec-b1"></span>
-          <span class="badge badge-ci" id="rec-b2"></span>
-          <span class="badge badge-pandas" id="rec-b3"></span>
+    <div class="course-menu">
+      <a class="course-item" href="https://github.com/paulinap92/event-platform-ml-microservices" target="_blank">
+        <strong>AI-Powered Event Platform</strong>
+        <span id="course-platform-desc"></span>
+        <div class="course-tags">
+          <span class="pill">Microservices</span>
+          <span class="pill">ML</span>
+          <span class="pill">Docker</span>
         </div>
+      </a>
 
-        <div class="micro-tag">
-          <span class="pill">Experimentation</span>
-          <span class="pill">Evaluation</span>
-          <span class="pill">Production-ready</span>
+      <a class="course-item" href="https://github.com/paulinap92/transaction-data-report" target="_blank">
+        <strong>Transaction Data Report</strong>
+        <span id="course-transaction-desc"></span>
+        <div class="course-tags">
+          <span class="pill">Python</span>
+          <span class="pill">Pandas</span>
+          <span class="pill">Reporting</span>
         </div>
+      </a>
 
-        <div class="micro-footer">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/recommendation-model-research" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
+      <a class="course-item" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">
+        <strong>Travel Agency</strong>
+        <span id="course-travel-desc"></span>
+        <div class="course-tags">
+          <span class="pill">SQL</span>
+          <span class="pill">Python</span>
+          <span class="pill">Files</span>
         </div>
-      </div>
+      </a>
 
-      <div class="micro-subcard">
-        <h4 id="sent-title"></h4>
-        <p id="sent-desc"></p>
-
-        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
-          <span class="badge badge-nlp" id="sent-b1"></span>
-          <span class="badge badge-oop" id="sent-b2"></span>
-          <span class="badge badge-ci" id="sent-b3"></span>
+      <a class="course-item" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">
+        <strong>Subscription Service</strong>
+        <span id="course-subscription-desc"></span>
+        <div class="course-tags">
+          <span class="pill">OOP</span>
+          <span class="pill">JSON</span>
+          <span class="pill">TXT</span>
         </div>
+      </a>
 
-        <div class="micro-tag">
-          <span class="pill">Experimentation</span>
-          <span class="pill">Evaluation</span>
-          <span class="pill">Production-ready</span>
+      <a class="course-item" href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb" target="_blank">
+        <strong>Spark SQL Turtle Challenge</strong>
+        <span id="course-turtle-desc"></span>
+        <div class="course-tags">
+          <span class="pill">Spark SQL</span>
+          <span class="pill">EDA</span>
+          <span class="pill">Challenge</span>
         </div>
-
-        <div class="micro-footer">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/sentiment-analysis-research" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="micro-subcard">
-        <h4 id="evt-title"></h4>
-        <p id="evt-desc"></p>
-
-        <div class="micro-badges" style="margin:10px 0 0; padding:0; border:0;">
-          <span class="badge badge-oop" id="evt-b1"></span>
-          <span class="badge badge-ci" id="evt-b2"></span>
-          <span class="badge badge-pandas" id="evt-b3"></span>
-        </div>
-
-        <div class="micro-tag">
-          <span class="pill">Experimentation</span>
-          <span class="pill">Evaluation</span>
-          <span class="pill">Production-ready</span>
-        </div>
-
-        <div class="micro-footer">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/event-classification-research" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
-        </div>
-      </div>
-
+      </a>
     </div>
   </div>
-</div>
-
-<h2 id="other-title" class="subsection"></h2>
-<section class="projects">
-
-  <div class="card">
-    <div class="card-header">
-      <img src="https://dummyimage.com/50x300/239a94/ffffff&text=%20" alt="">
-      <div class="card-title">Transaction Data Report</div>
-    </div>
-
-    <div class="card-content">
-      <p id="p2-desc"></p>
-
-      <div class="card-footer">
-        <div class="tech-badges">
-          <span class="badge badge-python">Python</span>
-          <span class="badge badge-pandas">Pandas</span>
-          <span class="badge badge-flask">Flask</span>
-          <span class="badge badge-docker">Docker</span>
-          <span class="badge badge-docker">Isolation Forest</span>
-        </div>
-
-        <div class="project-actions">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/transaction-data-report" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <img src="https://dummyimage.com/50x300/4cc7c2/ffffff&text=%20" alt="">
-      <div class="card-title">Travel Agency</div>
-    </div>
-
-    <div class="card-content">
-      <p id="p3-desc"></p>
-
-      <div class="card-footer">
-        <div class="tech-badges">
-          <span class="badge badge-sql">SQL</span>
-          <span class="badge badge-python">Python</span>
-          <span class="badge badge-pandas">File processing</span>
-        </div>
-
-        <div class="project-actions">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/travel-agency-sql" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20" alt="">
-      <div class="card-title">Subscription Service</div>
-    </div>
-
-    <div class="card-content">
-      <p id="p4-desc"></p>
-
-      <div class="card-footer">
-        <div class="tech-badges">
-          <span class="badge badge-python">Python</span>
-          <span class="badge badge-oop">OOP</span>
-          <span class="badge badge-pandas">JSON</span>
-          <span class="badge badge-pandas">TXT</span>
-          <span class="badge badge-oop">Abstract Factory</span>
-        </div>
-
-        <div class="project-actions">
-          <a class="btn btn-secondary" href="https://github.com/paulinap92/subscription-service-factory" target="_blank">
-            <svg class="gh-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
-            <span class="github-text">GitHub</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<h2 id="challenge-title" class="subsection"></h2>
-<section class="projects">
-
-  <div class="card">
-    <div class="card-header">
-      <img src="https://dummyimage.com/50x300/c6f5f3/004b4b&text=%20" alt="">
-      <div class="card-title">Spark SQL Turtle Challenge</div>
-    </div>
-
-    <div class="card-content">
-      <img src="https://raw.githubusercontent.com/paulinap92/paulinap92.github.io/main/turtle.png" class="challenge-icon" alt="Turtle challenge icon">
-      <p id="turtle-desc"></p>
-
-      <div class="card-footer">
-        <div class="project-actions">
-          <a class="btn" href="https://colab.research.google.com/github/paulinap92/SQL-basics/blob/main/Turtles_%26_Tides_Spark_SQL_analysis.ipynb" target="_blank">
-            <span id="open-challenge-btn"></span>
-          </a>
-        </div>
-
-        <div class="tech-badges">
-          <span class="badge badge-python">Python</span>
-          <span class="badge badge-pandas">Spark</span>
-          <span class="badge badge-oop">EDA</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <h2 id="about-title"></h2>
