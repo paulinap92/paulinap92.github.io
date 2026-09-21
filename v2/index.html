@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paulina Piotrowska — AI/ML Engineer and Python Developer building production-oriented AI, data and automation systems.">
+  <title>Paulina Piotrowska — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">PP<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow">AI / ML ENGINEER · PYTHON DEVELOPER</div>
+      <h1>I build AI and data products that actually <em>do something.</em></h1>
+      <p class="hero-copy">
+        Production-oriented systems across applied AI, RAG, machine learning, data engineering
+        and automation — from pipelines and models to APIs, deployment and user-facing products.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#work">View selected work</a>
+        <a class="button ghost" href="https://github.com/paulinap92" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="button ghost" href="https://www.linkedin.com/in/paulina-piotrowska-859b17122/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <div class="hero-meta" aria-label="Core technologies">
+        <span>Python</span><span>FastAPI</span><span>RAG</span><span>LLMs</span><span>ML</span><span>SQL</span><span>Docker</span><span>CI/CD</span>
+      </div>
+    </section>
+
+    <section id="work" class="shell work-section">
+      <div class="section-heading">
+        <span class="kicker">SELECTED WORK</span>
+        <h2>Four projects that show how I think and build.</h2>
+      </div>
+
+      <article class="project project-featured">
+        <div class="project-copy">
+          <div class="project-number">01</div>
+          <div class="project-label">Product platform · Full-stack data experience</div>
+          <h3>Canarias Cerca</h3>
+          <p>
+            A map-first discovery platform for the Canary Islands combining live environmental data,
+            curated places, regional content and a suitability engine for deciding what is worth doing today.
+          </p>
+          <p class="project-detail">
+            One backend, multiple regions, PostGIS data, weather and live-data APIs, map UX and an editorial workflow.
+          </p>
+          <div class="stack">
+            <span>FastAPI</span><span>PostgreSQL</span><span>PostGIS</span><span>MapLibre</span><span>JavaScript</span><span>APIs</span>
+          </div>
+          <div class="project-links">
+            <span class="private-badge">Private build</span>
+          </div>
+        </div>
+        <div class="project-visual map-visual" aria-hidden="true">
+          <div class="map-topbar"><span></span><span></span><span></span></div>
+          <div class="map-sidebar">
+            <strong>DISCOVER</strong>
+            <i></i><i></i><i class="short"></i>
+            <div class="mini-cards"><b></b><b></b><b></b></div>
+          </div>
+          <div class="island island-one"></div>
+          <div class="island island-two"></div>
+          <div class="island island-three"></div>
+          <div class="map-chip chip-one">weather</div>
+          <div class="map-chip chip-two">trails</div>
+          <div class="map-chip chip-three">live</div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project compact">
+          <div class="project-visual anki-visual" aria-hidden="true">
+            <div class="window-bar"><span></span><span></span><span></span></div>
+            <div class="anki-layout">
+              <div class="anki-nav"></div>
+              <div class="anki-main">
+                <div class="line wide"></div><div class="line"></div>
+                <div class="anki-card">
+                  <small>EXPRESSIONS</small>
+                  <strong>production-ready</strong>
+                  <p>used in a real system, not only a prototype</p>
+                </div>
+                <div class="anki-buttons"><b></b><b></b><b></b></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-number">02</div>
+          <div class="project-label">Applied AI · Language learning</div>
+          <h3>AI Anki Language Learning Suite</h3>
+          <p>
+            Desktop AI application that turns vocabulary, grammar and conversation practice into structured,
+            reviewed Anki learning material with multi-provider LLM and TTS support.
+          </p>
+          <div class="stack">
+            <span>Python</span><span>Pydantic</span><span>AnkiConnect</span><span>OpenAI</span><span>Gemini</span><span>Claude</span>
+          </div>
+          <a class="text-link" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="project compact">
+          <div class="project-visual forecast-visual">
+            <img src="../dashboard_icon.png" alt="Air passenger forecasting dashboard preview">
+            <div class="forecast-overlay">
+              <span>FORECAST</span>
+              <strong>XGBoost + LSTM</strong>
+            </div>
+          </div>
+          <div class="project-number">03</div>
+          <div class="project-label">Machine learning · Forecasting</div>
+          <h3>Canary Islands Air Passenger Forecasting</h3>
+          <p>
+            End-to-end forecasting platform using official passenger data with feature engineering,
+            model comparison, KPI analysis, automated ingestion and cloud deployment.
+          </p>
+          <div class="stack">
+            <span>Python</span><span>Pandas</span><span>XGBoost</span><span>LSTM</span><span>Streamlit</span><span>GitHub Actions</span>
+          </div>
+          <div class="dual-links">
+            <a class="text-link" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+            <a class="text-link muted" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          </div>
+        </article>
+
+        <article class="project compact">
+          <div class="project-visual seismic-visual" aria-hidden="true">
+            <div class="seismic-header">LIVE SEISMIC FEED</div>
+            <div class="seismic-kpis"><b>24H</b><b>IGN</b><b>AUTO</b></div>
+            <svg viewBox="0 0 620 210" role="presentation">
+              <polyline points="0,130 35,132 62,128 88,132 116,130 140,130 164,68 181,168 197,128 230,131 255,129 282,130 306,104 322,154 341,130 375,132 402,126 426,131 453,130 474,92 490,145 506,130 540,132 568,129 620,130" fill="none" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <div class="project-number">04</div>
+          <div class="project-label">Automation · Monitoring</div>
+          <h3>Canary Seismic Monitor</h3>
+          <p>
+            Automated monitoring workflow that downloads and normalizes official IGN seismic data,
+            maintains history and powers a continuously refreshed dashboard.
+          </p>
+          <div class="stack">
+            <span>Python</span><span>Automation</span><span>Dash</span><span>Data pipeline</span><span>Railway</span>
+          </div>
+          <div class="dual-links">
+            <a class="text-link" href="https://canary-seismic-monitor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+            <a class="text-link muted" href="https://github.com/everyday-automated/canary-seismic-monitor-demo" target="_blank" rel="noopener noreferrer">Demo repo ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="more-work">
+        <div>
+          <span class="kicker">MORE WORK</span>
+          <h3>Smaller projects, research and engineering exercises.</h3>
+        </div>
+        <div class="more-links">
+          <a href="https://github.com/paulinap92/calima-detection-dashboard" target="_blank" rel="noopener noreferrer"><strong>Calima Detection Platform</strong><span>Cloud monitoring · MongoDB · CQRS · Docker</span></a>
+          <a href="https://github.com/paulinap92/event-platform-ml-microservices" target="_blank" rel="noopener noreferrer"><strong>AI-Powered Event Platform</strong><span>Microservices · NLP · recommendation · classification</span></a>
+          <a href="https://github.com/paulinap92/sentiment-analysis-research" target="_blank" rel="noopener noreferrer"><strong>Sentiment Research</strong><span>Classical ML vs transformers</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+      <div class="shell experience-inner">
+        <div>
+          <span class="kicker light">PRODUCTION EXPERIENCE</span>
+          <h2>AI projects built on top of years of real systems work.</h2>
+        </div>
+        <div class="experience-copy">
+          <p>
+            Before focusing on applied AI and machine learning, I spent years working with industrial automation,
+            computer vision and production systems in automotive environments.
+          </p>
+          <div class="timeline">
+            <div><span>2017—2026</span><strong>EINES Systems</strong><p>Computer vision, automation, diagnostics, data analysis and production support.</p></div>
+            <div><span>2026—now</span><strong>Expleo</strong><p>Engineering work with a continued focus on automation, software and AI.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="shell about-section">
+      <div class="portrait" aria-label="Portrait of Paulina Piotrowska"></div>
+      <div class="about-copy">
+        <span class="kicker">ABOUT</span>
+        <h2>Engineer first. AI because it is useful.</h2>
+        <p>
+          I am an automation engineer turned AI/ML engineer, focused on practical systems rather than isolated demos.
+          I like projects where software has to ingest messy data, make a decision, expose an API, survive deployment
+          and still be understandable to the person using it.
+        </p>
+        <p>
+          My current focus is Python, applied machine learning, RAG, LLM workflows, data products and automation.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section shell">
+      <span class="kicker">CONTACT</span>
+      <h2>Have a problem worth automating?</h2>
+      <div class="contact-links">
+        <a href="mailto:paulina.piotrowska.p@gmail.com">Email ↗</a>
+        <a href="https://github.com/paulinap92" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/paulina-piotrowska-859b17122/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>© 2026 Paulina Piotrowska</span>
+    <a href="../">Open the cute portfolio →</a>
+  </footer>
+</body>
+</html>
