@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Paulina Piotrowska — Data Scientist and AI Engineer portfolio." />
+<title>Paulina | Data Scientist & AI Engineer · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Paulina | Data Scientist & AI Engineer</h1>
+  <p data-i18n="header_subtitle"></p>
+  <div class="lang-switch" aria-label="Language selector">
+    <button type="button" onclick="setLang('en')">🇬🇧 EN</button>
+    <button type="button" onclick="setLang('es')">🇪🇸 ES</button>
+    <button type="button" onclick="setLang('pl')">🇵🇱 PL</button>
+  </div>
+</header>
+
+<main>
+  <section class="section vision">
+    <div class="vision-box">
+      <h2 data-i18n="vision_title"></h2>
+      <p data-i18n="vision_desc"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title" data-i18n="top_title"></h2>
+    <p class="section-subtitle" data-i18n="top_subtitle"></p>
+    <div class="grid">
+      <article class="card hero">
+        <div class="card-head violet"><h3 data-i18n="anki_title"></h3></div>
+        <div class="card-body">
+          <span class="status" data-i18n="flagship"></span>
+          <div class="project-visual dark" aria-hidden="true">🧠 📚 🔊</div>
+          <p data-i18n="anki_desc"></p>
+          <ul class="feature-list">
+            <li data-i18n="anki_f1"></li>
+            <li data-i18n="anki_f2"></li>
+            <li data-i18n="anki_f3"></li>
+            <li data-i18n="anki_f4"></li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">CustomTkinter</span><span class="tag">Pydantic</span>
+            <span class="tag">AnkiConnect</span><span class="tag">Gemini</span><span class="tag">OpenAI</span>
+            <span class="tag">Claude</span><span class="tag">TTS</span><span class="tag">pytest</span>
+          </div>
+          <div class="actions">
+            <a class="btn secondary" href="https://github.com/paulinap92/ai-anki-language-assistant" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="github"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card hero">
+        <div class="card-head"><h3 data-i18n="rag_title"></h3></div>
+        <div class="card-body">
+          <span class="status" data-i18n="in_development"></span>
+          <div class="project-visual" aria-hidden="true">💬 🗂️ ☁️</div>
+          <p data-i18n="rag_desc"></p>
+          <ul class="feature-list">
+            <li data-i18n="rag_f1"></li>
+            <li data-i18n="rag_f2"></li>
+            <li data-i18n="rag_f3"></li>
+            <li data-i18n="rag_f4"></li>
+          </ul>
+          <div class="tags">
+            <span class="tag">FastAPI</span><span class="tag">RAG</span><span class="tag">Qdrant Cloud</span>
+            <span class="tag">LangGraph</span><span class="tag">Pydantic</span><span class="tag">Docker</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+          <div class="actions"><span class="btn disabled" data-i18n="repo_soon"></span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title section-title-with-icon"><span data-i18n="data_title"></span><img class="section-icon" src="../canary-turtle.png" alt="" aria-hidden="true"></h2>
+    <p class="section-subtitle" data-i18n="data_subtitle"></p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head"><h3 data-i18n="passengers_title"></h3></div>
+        <div class="card-body">
+          <div class="project-visual with-art"><img class="project-art" src="../dashboard_icon.png" alt="Passenger forecasting dashboard icon"><span class="emoji-strip" aria-hidden="true">✈️ 📈 🏝️</span></div>
+          <p data-i18n="passengers_desc"></p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">XGBoost</span>
+            <span class="tag">LSTM</span><span class="tag">Streamlit</span><span class="tag">Plotly</span>
+            <span class="tag">GitHub Actions</span><span class="tag">Cloud</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://canary-islands-air-passenger-forecasting-vzjqeewcif6zozww6edre.streamlit.app/" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="live"></span></a>
+            <a class="btn secondary" href="https://github.com/paulinap92/canary-islands-air-passenger-forecasting" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="github"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head mint"><h3 data-i18n="calima_title"></h3></div>
+        <div class="card-body">
+          <div class="project-visual with-art"><img class="project-art wide" src="../calima_dashboard.png" alt="Calima dashboard illustration"><span class="emoji-strip" aria-hidden="true">🌫️ 🗄️ 🐳</span></div>
+          <p data-i18n="calima_desc"></p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Open-Meteo</span><span class="tag">MongoDB</span>
+            <span class="tag">MongoEngine</span><span class="tag">CQRS</span><span class="tag">Docker</span>
+            <span class="tag">pytest</span><span class="tag">Render</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://calima-detection-dashboard.onrender.com/" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="live"></span></a>
+            <a class="btn secondary" href="https://github.com/paulinap92/calima-detection-dashboard" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="github"></span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title" data-i18n="next_title"></h2>
+    <p class="section-subtitle" data-i18n="next_subtitle"></p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head mint"><h3 data-i18n="traveller_title"></h3></div>
+        <div class="card-body">
+          <span class="status" data-i18n="in_development"></span>
+          <div class="project-visual" aria-hidden="true">🌴 🧭 🤖</div>
+          <p data-i18n="traveller_desc"></p>
+          <div class="tags">
+            <span class="tag">Django</span><span class="tag">SQL</span><span class="tag">LLM</span>
+            <span class="tag">LangChain</span><span class="tag">Travel Data</span>
+          </div>
+          <div class="actions">
+            <a class="btn secondary" href="https://github.com/paulinap92/canary-ai-travel-planner" target="_blank" rel="noopener noreferrer">↗ <span data-i18n="github"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card surprise">
+        <div class="card-head"><h3 data-i18n="surprise_title"></h3></div>
+        <div class="card-body">
+          <span class="status" data-i18n="coming_soon"></span>
+          <div class="project-visual" aria-hidden="true">🔒 ✨ ❔</div>
+          <p data-i18n="surprise_desc"></p>
+          <div class="tags"><span class="tag" data-i18n="coming_soon"></span><span class="tag">████████</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title" data-i18n="support_title"></h2>
+    <p class="section-subtitle" data-i18n="support_desc"></p>
+    <div class="support-box">
+      <a class="support-feature" href="https://github.com/paulinap92/event-platform-ml-microservices" target="_blank" rel="noopener noreferrer">
+        <strong>AI-Powered Event Platform</strong>
+        <span data-i18n="event_desc"></span>
+        <div class="tags" style="justify-content:flex-start;margin-top:12px;margin-bottom:0">
+          <span class="tag">Microservices</span><span class="tag">Machine Learning</span><span class="tag">NLP</span><span class="tag">Docker</span><span class="tag">REST API</span>
+        </div>
+      </a>
+
+      <h3 class="mini-title" data-i18n="research_title"></h3>
+      <div class="mini-grid">
+        <a class="mini-card" href="https://github.com/paulinap92/recommendation-model-research" target="_blank" rel="noopener noreferrer">
+          <strong>Recommendation Classification Benchmark</strong><span data-i18n="rec_desc"></span>
+          <div class="tags"><span class="tag">Classification</span><span class="tag">Benchmark</span></div>
+        </a>
+        <a class="mini-card" href="https://github.com/paulinap92/sentiment-analysis-research" target="_blank" rel="noopener noreferrer">
+          <strong>Sentiment · Transformers vs ML</strong><span data-i18n="sent_desc"></span>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">Transformers</span></div>
+        </a>
+        <a class="mini-card" href="https://github.com/paulinap92/event-classification-research" target="_blank" rel="noopener noreferrer">
+          <strong>Event Classification · MLP</strong><span data-i18n="evt_desc"></span>
+          <div class="tags"><span class="tag">MLP</span><span class="tag">Pipeline</span></div>
+        </a>
+      </div>
+
+      <h3 class="mini-title" data-i18n="data_projects_title"></h3>
+      <div class="mini-grid">
+        <a class="mini-card" href="https://github.com/paulinap92/transaction-data-report" target="_blank" rel="noopener noreferrer">
+          <strong>Transaction Data Report</strong><span data-i18n="transaction_desc"></span>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span></div>
+        </a>
+        <a class="mini-card" href="https://github.com/paulinap92/travel-agency-sql" target="_blank" rel="noopener noreferrer">
+          <strong>Travel Agency SQL</strong><span data-i18n="travel_desc"></span>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">pytest</span></div>
+        </a>
+        <a class="mini-card" href="https://github.com/paulinap92/subscription-service-factory" target="_blank" rel="noopener noreferrer">
+          <strong>Subscription Service Factory</strong><span data-i18n="subscription_desc"></span>
+          <div class="tags"><span class="tag">OOP</span><span class="tag">JSON</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title" data-i18n="about_title"></h2>
+    <div class="about">
+      <div class="avatar" aria-label="Paulina Piotrowska">PP</div>
+      <p data-i18n="about_desc"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title" data-i18n="contact_title"></h2>
+    <div class="contact">
+      <a href="mailto:paulina.piotrowska.p@gmail.com">📧 Email</a>
+      <a href="https://github.com/paulinap92" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/paulina-piotrowska-859b17122/" target="_blank" rel="noopener noreferrer">🌐 LinkedIn</a>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Paulina Piotrowska</footer>
+</body>
+</html>
